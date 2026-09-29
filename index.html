@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Salary Planner</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  color: #1f2937;
+}
+
+header {
+  background: #111827;
+  color: white;
+  padding: 22px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 28px;
+}
+
+header p {
+  margin-top: 6px;
+  color: #cbd5e1;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 25px auto;
+  padding: 0 15px;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+}
+
+.card h2 {
+  margin-bottom: 15px;
+}
+
+input,
+select,
+button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 9px;
+  border: 1px solid #d1d5db;
+  font-size: 15px;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+}
+
+.primary {
+  background: #2563eb;
+  color: white;
+}
+
+.primary:hover {
+  background: #1d4ed8;
+}
+
+.green {
+  background: #16a34a;
+  color: white;
+}
+
+.red {
+  background: #dc2626;
+  color: white;
+}
+
+.gray {
+  background: #6b7280;
+  color: white;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.expense-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  gap: 10px;
+  align-items: center;
+}
+
+.expense-list {
+  margin-top: 20px;
+}
+
+.expense-item {
+  display: grid;
+  grid-template-columns: 1fr 130px 120px 90px 90px;
+  gap: 10px;
+  align-items: center;
+  padding: 13px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.expense-item:last-child {
+  border-bottom: none;
+}
+
+.badge {
+  padding: 6px 9px;
+  border-radius: 20px;
+  font-size: 12px;
+  text-align: center;
+  background: #e5e7eb;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.summary-box {
+  padding: 20px;
+  border-radius: 13px;
+  background: #f8fafc;
+  text-align: center;
+}
+
+.summary-box small {
+  display: block;
+  color: #64748b;
+  margin-bottom: 7px;
+}
+
+.summary-box strong {
+  font-size: 23px;
+}
+
+.salary {
+  color: #2563eb;
+}
+
+.spent {
+  color: #dc2626;
+}
+
+.balance {
+  color: #16a34a;
+}
+
+.savings {
+  color: #7c3aed;
+}
+
+.plan-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.plan-table th,
+.plan-table td {
+  padding: 13px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+.plan-table th {
+  background: #f8fafc;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.actions button {
+  width: auto;
+  padding: 8px 12px;
+}
+
+.empty {
+  text-align: center;
+  padding: 25px;
+  color: #64748b;
+}
+
+.history-item {
+  padding: 15px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.history-item:last-child {
+  border-bottom: none;
+}
+
+.history-item strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.month-selector {
+  max-width: 250px;
+}
+
+@media (max-width: 800px) {
+  .form-grid,
+  .summary {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .expense-item {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .expense-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .form-grid,
+  .summary {
+    grid-template-columns: 1fr;
+  }
+
+  header h1 {
+    font-size: 23px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>💰 My Salary Planner</h1>
+  <p>Plan your salary. Track your expenses. Control your money.</p>
+</header>
+
+<div class="container">
+
+  <!-- MONTH & SALARY -->
+  <div class="card">
+    <h2>📅 Monthly Salary</h2>
+
+    <div class="form-grid">
+
+      <div>
+        <label>Month</label>
+        <input type="month" id="month">
+      </div>
+
+      <div>
+        <label>Salary</label>
+        <input type="number" id="salary" placeholder="Enter salary">
+      </div>
+
+      <div style="display:flex;align-items:end;">
+        <button class="primary" onclick="saveSalary()">
+          Save Salary
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ADD EXPENSE -->
+  <div class="card">
+
+    <h2>➕ Add Your Expenses</h2>
+
+    <div class="expense-grid">
+
+      <input
+        type="text"
+        id="expenseName"
+        placeholder="Expense name e.g. Rent"
+      >
+
+      <input
+        type="number"
+        id="expenseAmount"
+        placeholder="Amount"
+      >
+
+      <select id="expenseType">
+        <option value="Fixed">Fixed</option>
+        <option value="Variable">Variable</option>
+        <option value="One-time">One-time</option>
+      </select>
+
+      <button class="green" onclick="addExpense()">
+        Add
+      </button>
+
+    </div>
+
+    <div class="expense-list" id="expenseList"></div>
+
+  </div>
+
+
+  <!-- MONTHLY PLAN -->
+  <div class="card">
+
+    <h2>🎯 This Month Plan</h2>
+
+    <div class="summary">
+
+      <div class="summary-box">
+        <small>Salary</small>
+        <strong class="salary" id="summarySalary">₹0</strong>
+      </div>
+
+      <div class="summary-box">
+        <small>Planned Expenses</small>
+        <strong class="spent" id="summaryExpenses">₹0</strong>
+      </div>
+
+      <div class="summary-box">
+        <small>Savings</small>
+        <strong class="savings" id="summarySavings">₹0</strong>
+      </div>
+
+      <div class="summary-box">
+        <small>Remaining</small>
+        <strong class="balance" id="summaryBalance">₹0</strong>
+      </div>
+
+    </div>
+
+    <br>
+
+    <table class="plan-table">
+
+      <thead>
+        <tr>
+          <th>Expense</th>
+          <th>Type</th>
+          <th>Planned Amount</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody id="planTable"></tbody>
+
+    </table>
+
+  </div>
+
+
+  <!-- SAVINGS -->
+  <div class="card">
+
+    <h2>💰 Savings Plan</h2>
+
+    <p id="savingMessage">
+      Enter your salary and expenses to see your savings plan.
+    </p>
+
+  </div>
+
+
+  <!-- HISTORY -->
+  <div class="card">
+
+    <h2>📚 Monthly History</h2>
+
+    <div id="history"></div>
+
+  </div>
+
+</div>
+
+
+<script>
+
+const STORAGE_KEY = "mySalaryPlannerData";
+
+let data = JSON.parse(
+  localStorage.getItem(STORAGE_KEY)
+) || {
+  months: {},
+  expenses: []
+};
+
+
+/* -----------------------------
+   DEFAULT MONTH
+----------------------------- */
+
+const monthInput = document.getElementById("month");
+
+const today = new Date();
+
+const currentMonth =
+  today.getFullYear() +
+  "-" +
+  String(today.getMonth() + 1).padStart(2, "0");
+
+monthInput.value = currentMonth;
+
+
+/* -----------------------------
+   SAVE DATA
+----------------------------- */
+
+function saveData() {
+
+  localStorage.setItem(
+    STORAGE_KEY,
+    JSON.stringify(data)
+  );
+
+}
+
+
+/* -----------------------------
+   CURRENCY
+----------------------------- */
+
+function money(value) {
+
+  return "₹" +
+    Number(value || 0).toLocaleString("en-IN");
+
+}
+
+
+/* -----------------------------
+   GET CURRENT MONTH
+----------------------------- */
+
+function getMonth() {
+
+  return monthInput.value;
+
+}
+
+
+/* -----------------------------
+   SAVE SALARY
+----------------------------- */
+
+function saveSalary() {
+
+  const month = getMonth();
+
+  const salary =
+    Number(document.getElementById("salary").value);
+
+  if (!month) {
+    alert("Please select a month.");
+    return;
+  }
+
+  if (salary < 0) {
+    alert("Salary cannot be negative.");
+    return;
+  }
+
+  if (!data.months[month]) {
+
+    data.months[month] = {
+      salary: salary,
+      expenseAmounts: {}
+    };
+
+  } else {
+
+    data.months[month].salary = salary;
+
+  }
+
+  saveData();
+
+  render();
+
+  alert(
+    "Salary saved for " + month + "!"
+  );
+
+}
+
+
+/* -----------------------------
+   ADD EXPENSE
+----------------------------- */
+
+function addExpense() {
+
+  const name =
+    document.getElementById("expenseName").value.trim();
+
+  const amount =
+    Number(document.getElementById("expenseAmount").value);
+
+  const type =
+    document.getElementById("expenseType").value;
+
+  if (!name) {
+    alert("Please enter expense name.");
+    return;
+  }
+
+  if (amount < 0) {
+    alert("Amount cannot be negative.");
+    return;
+  }
+
+  const expense = {
+
+    id: Date.now(),
+
+    name: name,
+
+    defaultAmount: amount,
+
+    type: type
+
+  };
+
+  data.expenses.push(expense);
+
+  const month = getMonth();
+
+  if (!data.months[month]) {
+
+    data.months[month] = {
+      salary: 0,
+      expenseAmounts: {}
+    };
+
+  }
+
+  data.months[month].expenseAmounts[
+    expense.id
+  ] = amount;
+
+  saveData();
+
+  document.getElementById("expenseName").value = "";
+
+  document.getElementById("expenseAmount").value = "";
+
+  render();
+
+}
+
+
+/* -----------------------------
+   DELETE EXPENSE
+----------------------------- */
+
+function deleteExpense(id) {
+
+  if (!confirm("Delete this expense?")) {
+    return;
+  }
+
+  data.expenses =
+    data.expenses.filter(
+      e => e.id !== id
+    );
+
+  Object.keys(data.months).forEach(month => {
+
+    if (
+      data.months[month].expenseAmounts
+    ) {
+
+      delete data.months[month].expenseAmounts[id];
+
+    }
+
+  });
+
+  saveData();
+
+  render();
+
+}
+
+
+/* -----------------------------
+   CHANGE MONTH
+----------------------------- */
+
+monthInput.addEventListener(
+  "change",
+  function() {
+
+    render();
+
+  }
+);
+
+
+/* -----------------------------
+   UPDATE MONTH EXPENSE
+----------------------------- */
+
+function updateExpenseAmount(
+  id,
+  value
+) {
+
+  const month = getMonth();
+
+  if (!data.months[month]) {
+
+    data.months[month] = {
+      salary: 0,
+      expenseAmounts: {}
+    };
+
+  }
+
+  data.months[month].expenseAmounts[id] =
+    Number(value || 0);
+
+  saveData();
+
+  render();
+
+}
+
+
+/* -----------------------------
+   EDIT EXPENSE NAME
+----------------------------- */
+
+function editExpense(id) {
+
+  const expense =
+    data.expenses.find(
+      e => e.id === id
+    );
+
+  if (!expense) return;
+
+  const newName =
+    prompt(
+      "Enter new expense name:",
+      expense.name
+    );
+
+  if (
+    newName &&
+    newName.trim()
+  ) {
+
+    expense.name =
+      newName.trim();
+
+    saveData();
+
+    render();
+
+  }
+
+}
+
+
+/* -----------------------------
+   GET MONTH EXPENSE AMOUNT
+----------------------------- */
+
+function getExpenseAmount(
+  expense,
+  month
+) {
+
+  if (
+    data.months[month] &&
+    data.months[month].expenseAmounts &&
+    data.months[month].expenseAmounts[
+      expense.id
+    ] !== undefined
+  ) {
+
+    return Number(
+      data.months[month]
+        .expenseAmounts[expense.id]
+    );
+
+  }
+
+  return Number(
+    expense.defaultAmount || 0
+  );
+
+}
+
+
+/* -----------------------------
+   RENDER EXPENSE LIST
+----------------------------- */
+
+function renderExpenseList() {
+
+  const container =
+    document.getElementById("expenseList");
+
+  if (!data.expenses.length) {
+
+    container.innerHTML = `
+      <div class="empty">
+        No expenses added yet.
+      </div>
+    `;
+
+    return;
+
+  }
+
+  container.innerHTML = data.expenses
+    .map(expense => {
+
+      return `
+
+        <div class="expense-item">
+
+          <strong>
+            ${escapeHTML(expense.name)}
+          </strong>
+
+          <span>
+            ${money(expense.defaultAmount)}
+          </span>
+
+          <span class="badge">
+            ${expense.type}
+          </span>
+
+          <div class="actions">
+
+            <button
+              class="gray"
+              onclick="editExpense(${expense.id})"
+            >
+              Edit
+            </button>
+
+            <button
+              class="red"
+              onclick="deleteExpense(${expense.id})"
+            >
+              Delete
+            </button>
+
+          </div>
+
+        </div>
+
+      `;
+
+    })
+    .join("");
+
+}
+
+
+/* -----------------------------
+   RENDER PLAN
+----------------------------- */
+
+function renderPlan() {
+
+  const month = getMonth();
+
+  const monthData =
+    data.months[month] || {
+      salary: 0,
+      expenseAmounts: {}
+    };
+
+  const salary =
+    Number(monthData.salary || 0);
+
+  document.getElementById("salary").value =
+    salary || "";
+
+  document.getElementById("summarySalary")
+    .textContent = money(salary);
+
+
+  let totalExpenses = 0;
+
+  const rows =
+    data.expenses.map(expense => {
+
+      const amount =
+        getExpenseAmount(
+          expense,
+          month
+        );
+
+      totalExpenses += amount;
+
+      return `
+
+        <tr>
+
+          <td>
+            ${escapeHTML(expense.name)}
+          </td>
+
+          <td>
+            <span class="badge">
+              ${expense.type}
+            </span>
+          </td>
+
+          <td>
+
+            <input
+              type="number"
+              value="${amount}"
+              min="0"
+              onchange="
+                updateExpenseAmount(
+                  ${expense.id},
+                  this.value
+                )
+              "
+            >
+
+          </td>
+
+          <td>
+
+            <button
+              class="red"
+              style="width:auto;padding:8px 12px;"
+              onclick="
+                deleteExpense(${expense.id})
+              "
+            >
+              Delete
+            </button>
+
+          </td>
+
+        </tr>
+
+      `;
+
+    }).join("");
+
+
+  document.getElementById("planTable")
+    .innerHTML = rows ||
+    `
+      <tr>
+        <td colspan="4">
+          <div class="empty">
+            Add your expenses above.
+          </div>
+        </td>
+      </tr>
+    `;
+
+
+  const balance =
+    salary - totalExpenses;
+
+  let savings = balance > 0
+    ? balance
+    : 0;
+
+
+  document.getElementById("summaryExpenses")
+    .textContent =
+    money(totalExpenses);
+
+  document.getElementById("summarySavings")
+    .textContent =
+    money(savings);
+
+  document.getElementById("summaryBalance")
+    .textContent =
+    money(balance);
+
+
+  const savingMessage =
+    document.getElementById("savingMessage");
+
+
+  if (salary === 0) {
+
+    savingMessage.innerHTML =
+      "💡 Enter your salary to calculate your monthly plan.";
+
+  }
+
+  else if (balance > 0) {
+
+    savingMessage.innerHTML = `
+      🎯 After your planned expenses,
+      you can keep approximately
+      <strong>${money(balance)}</strong>
+      as savings / emergency money this month.
+    `;
+
+  }
+
+  else if (balance === 0) {
+
+    savingMessage.innerHTML = `
+      ⚠️ Your salary is completely allocated
+      to your planned expenses.
+    `;
+
+  }
+
+  else {
+
+    savingMessage.innerHTML = `
+      🚨 Your planned expenses are
+      <strong>${money(
+        Math.abs(balance)
+      )}</strong>
+      higher than your salary.
+      Consider reducing some expenses.
+    `;
+
+  }
+
+}
+
+
+/* -----------------------------
+   HISTORY
+----------------------------- */
+
+function renderHistory() {
+
+  const container =
+    document.getElementById("history");
+
+  const months =
+    Object.keys(data.months)
+      .sort()
+      .reverse();
+
+  if (!months.length) {
+
+    container.innerHTML = `
+      <div class="empty">
+        No monthly history yet.
+      </div>
+    `;
+
+    return;
+
+  }
+
+  container.innerHTML =
+    months.map(month => {
+
+      const monthData =
+        data.months[month];
+
+      const salary =
+        Number(monthData.salary || 0);
+
+      let total = 0;
+
+      data.expenses.forEach(expense => {
+
+        total +=
+          getExpenseAmount(
+            expense,
+            month
+          );
+
+      });
+
+      const balance =
+        salary - total;
+
+      return `
+
+        <div class="history-item">
+
+          <strong>
+            📅 ${month}
+          </strong>
+
+          Salary:
+          ${money(salary)}
+          &nbsp; | &nbsp;
+
+          Expenses:
+          ${money(total)}
+          &nbsp; | &nbsp;
+
+          Balance:
+          <strong>
+            ${money(balance)}
+          </strong>
+
+        </div>
+
+      `;
+
+    }).join("");
+
+}
+
+
+/* -----------------------------
+   ESCAPE HTML
+----------------------------- */
+
+function escapeHTML(text) {
+
+  return String(text)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+
+}
+
+
+/* -----------------------------
+   MAIN RENDER
+----------------------------- */
+
+function render() {
+
+  renderExpenseList();
+
+  renderPlan();
+
+  renderHistory();
+
+}
+
+
+/* -----------------------------
+   START
+----------------------------- */
+
+render();
+
+</script>
+
+</body>
+</html>
