@@ -7,250 +7,246 @@
 <title>My Salary Planner</title>
 
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background: #f4f6f8;
-  color: #1f2937;
+body{
+  font-family:Arial,sans-serif;
+  background:#f3f6fa;
+  color:#172033;
 }
 
-header {
-  background: #111827;
-  color: white;
-  padding: 22px;
-  text-align: center;
+header{
+  background:#111827;
+  color:white;
+  text-align:center;
+  padding:25px 15px;
 }
 
-header h1 {
-  font-size: 28px;
+header h1{
+  font-size:29px;
 }
 
-header p {
-  margin-top: 6px;
-  color: #cbd5e1;
+header p{
+  margin-top:7px;
+  color:#cbd5e1;
 }
 
-.container {
-  max-width: 1100px;
-  margin: 25px auto;
-  padding: 0 15px;
+.container{
+  max-width:1100px;
+  margin:25px auto;
+  padding:0 15px;
 }
 
-.card {
-  background: white;
-  border-radius: 15px;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+.card{
+  background:white;
+  border-radius:16px;
+  padding:22px;
+  margin-bottom:20px;
+  box-shadow:0 5px 18px rgba(0,0,0,.07);
 }
 
-.card h2 {
-  margin-bottom: 15px;
+.card h2{
+  margin-bottom:18px;
 }
 
-input,
-select,
-button {
-  width: 100%;
-  padding: 12px;
-  border-radius: 9px;
-  border: 1px solid #d1d5db;
-  font-size: 15px;
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr 180px;
+  gap:12px;
 }
 
-input:focus,
-select:focus {
-  outline: none;
-  border-color: #2563eb;
+label{
+  display:block;
+  margin-bottom:6px;
+  font-size:14px;
+  font-weight:bold;
 }
 
-button {
-  cursor: pointer;
-  border: none;
-  font-weight: bold;
+input,select,button{
+  width:100%;
+  padding:12px;
+  border-radius:9px;
+  border:1px solid #d1d5db;
+  font-size:15px;
 }
 
-.primary {
-  background: #2563eb;
-  color: white;
+button{
+  border:none;
+  cursor:pointer;
+  font-weight:bold;
 }
 
-.primary:hover {
-  background: #1d4ed8;
+.primary{
+  background:#2563eb;
+  color:white;
 }
 
-.green {
-  background: #16a34a;
-  color: white;
+.green{
+  background:#16a34a;
+  color:white;
 }
 
-.red {
-  background: #dc2626;
-  color: white;
+.red{
+  background:#dc2626;
+  color:white;
 }
 
-.gray {
-  background: #6b7280;
-  color: white;
+.gray{
+  background:#64748b;
+  color:white;
 }
 
-.form-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
+.expense-grid{
+  display:grid;
+  grid-template-columns:1fr 180px 160px 100px;
+  gap:10px;
 }
 
-.expense-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr auto;
-  gap: 10px;
-  align-items: center;
+.summary{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
 }
 
-.expense-list {
-  margin-top: 20px;
+.summary-box{
+  background:#f8fafc;
+  padding:20px;
+  border-radius:14px;
+  text-align:center;
 }
 
-.expense-item {
-  display: grid;
-  grid-template-columns: 1fr 130px 120px 90px 90px;
-  gap: 10px;
-  align-items: center;
-  padding: 13px;
-  border-bottom: 1px solid #e5e7eb;
+.summary-box small{
+  display:block;
+  color:#64748b;
+  margin-bottom:8px;
 }
 
-.expense-item:last-child {
-  border-bottom: none;
+.summary-box strong{
+  font-size:23px;
 }
 
-.badge {
-  padding: 6px 9px;
-  border-radius: 20px;
-  font-size: 12px;
-  text-align: center;
-  background: #e5e7eb;
+.salary{
+  color:#2563eb;
 }
 
-.summary {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
+.expenses{
+  color:#dc2626;
 }
 
-.summary-box {
-  padding: 20px;
-  border-radius: 13px;
-  background: #f8fafc;
-  text-align: center;
+.saving{
+  color:#16a34a;
 }
 
-.summary-box small {
-  display: block;
-  color: #64748b;
-  margin-bottom: 7px;
+.remaining{
+  color:#7c3aed;
 }
 
-.summary-box strong {
-  font-size: 23px;
+.saving-card{
+  background:#ecfdf5;
+  border:2px solid #86efac;
+  text-align:center;
 }
 
-.salary {
-  color: #2563eb;
+.saving-card h2{
+  color:#15803d;
 }
 
-.spent {
-  color: #dc2626;
+.big-saving{
+  font-size:38px;
+  font-weight:bold;
+  color:#16a34a;
+  margin:12px 0;
 }
 
-.balance {
-  color: #16a34a;
-}
-
-.savings {
-  color: #7c3aed;
-}
-
-.plan-table {
-  width: 100%;
-  border-collapse: collapse;
+.plan-table{
+  width:100%;
+  border-collapse:collapse;
 }
 
 .plan-table th,
-.plan-table td {
-  padding: 13px;
-  border-bottom: 1px solid #e5e7eb;
-  text-align: left;
+.plan-table td{
+  padding:13px;
+  border-bottom:1px solid #e5e7eb;
+  text-align:left;
 }
 
-.plan-table th {
-  background: #f8fafc;
+.plan-table th{
+  background:#f8fafc;
 }
 
-.actions {
-  display: flex;
-  gap: 8px;
+.plan-table input{
+  max-width:160px;
 }
 
-.actions button {
-  width: auto;
-  padding: 8px 12px;
+.badge{
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:20px;
+  background:#e5e7eb;
+  font-size:12px;
 }
 
-.empty {
-  text-align: center;
-  padding: 25px;
-  color: #64748b;
+.expense-list{
+  margin-top:20px;
 }
 
-.history-item {
-  padding: 15px;
-  border-bottom: 1px solid #e5e7eb;
+.expense-item{
+  display:grid;
+  grid-template-columns:1fr 130px 120px 160px;
+  gap:10px;
+  align-items:center;
+  padding:14px 0;
+  border-bottom:1px solid #e5e7eb;
 }
 
-.history-item:last-child {
-  border-bottom: none;
+.actions{
+  display:flex;
+  gap:7px;
 }
 
-.history-item strong {
-  display: block;
-  margin-bottom: 5px;
+.actions button{
+  width:auto;
+  padding:8px 12px;
 }
 
-.month-selector {
-  max-width: 250px;
+.history-item{
+  padding:14px 0;
+  border-bottom:1px solid #e5e7eb;
 }
 
-@media (max-width: 800px) {
+.empty{
+  text-align:center;
+  padding:20px;
+  color:#64748b;
+}
+
+.warning{
+  background:#fff7ed;
+  border:1px solid #fdba74;
+  color:#c2410c;
+  padding:15px;
+  border-radius:10px;
+  margin-top:15px;
+}
+
+@media(max-width:800px){
+
   .form-grid,
-  .summary {
-    grid-template-columns: 1fr 1fr;
+  .expense-grid,
+  .summary{
+    grid-template-columns:1fr;
   }
 
-  .expense-item {
-    grid-template-columns: 1fr 1fr;
+  .expense-item{
+    grid-template-columns:1fr 1fr;
   }
 
-  .expense-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
-@media (max-width: 500px) {
-  .form-grid,
-  .summary {
-    grid-template-columns: 1fr;
-  }
-
-  header h1 {
-    font-size: 23px;
-  }
-}
 </style>
 </head>
 
@@ -258,14 +254,16 @@ button {
 
 <header>
   <h1>💰 My Salary Planner</h1>
-  <p>Plan your salary. Track your expenses. Control your money.</p>
+  <p>Plan your salary • Control expenses • Know your savings</p>
 </header>
 
 <div class="container">
 
-  <!-- MONTH & SALARY -->
+  <!-- SALARY -->
+
   <div class="card">
-    <h2>📅 Monthly Salary</h2>
+
+    <h2>💰 Monthly Salary</h2>
 
     <div class="form-grid">
 
@@ -276,23 +274,32 @@ button {
 
       <div>
         <label>Salary</label>
-        <input type="number" id="salary" placeholder="Enter salary">
+        <input
+          type="number"
+          id="salary"
+          placeholder="Enter salary"
+        >
       </div>
 
       <div style="display:flex;align-items:end;">
-        <button class="primary" onclick="saveSalary()">
+        <button
+          class="primary"
+          onclick="saveSalary()"
+        >
           Save Salary
         </button>
       </div>
 
     </div>
+
   </div>
 
 
   <!-- ADD EXPENSE -->
+
   <div class="card">
 
-    <h2>➕ Add Your Expenses</h2>
+    <h2>➕ My Monthly Expenses</h2>
 
     <div class="expense-grid">
 
@@ -314,57 +321,113 @@ button {
         <option value="One-time">One-time</option>
       </select>
 
-      <button class="green" onclick="addExpense()">
+      <button
+        class="green"
+        onclick="addExpense()"
+      >
         Add
       </button>
 
     </div>
 
-    <div class="expense-list" id="expenseList"></div>
+    <div
+      class="expense-list"
+      id="expenseList"
+    ></div>
 
   </div>
 
 
-  <!-- MONTHLY PLAN -->
+  <!-- SUMMARY -->
+
   <div class="card">
 
-    <h2>🎯 This Month Plan</h2>
+    <h2>📊 This Month</h2>
 
     <div class="summary">
 
       <div class="summary-box">
         <small>Salary</small>
-        <strong class="salary" id="summarySalary">₹0</strong>
+        <strong
+          class="salary"
+          id="summarySalary"
+        >
+          ₹0
+        </strong>
       </div>
 
       <div class="summary-box">
-        <small>Planned Expenses</small>
-        <strong class="spent" id="summaryExpenses">₹0</strong>
+        <small>Total Expenses</small>
+        <strong
+          class="expenses"
+          id="summaryExpenses"
+        >
+          ₹0
+        </strong>
       </div>
 
       <div class="summary-box">
-        <small>Savings</small>
-        <strong class="savings" id="summarySavings">₹0</strong>
+        <small>Can Save</small>
+        <strong
+          class="saving"
+          id="summarySaving"
+        >
+          ₹0
+        </strong>
       </div>
 
       <div class="summary-box">
         <small>Remaining</small>
-        <strong class="balance" id="summaryBalance">₹0</strong>
+        <strong
+          class="remaining"
+          id="summaryRemaining"
+        >
+          ₹0
+        </strong>
       </div>
 
     </div>
 
-    <br>
+  </div>
+
+
+  <!-- SAVING -->
+
+  <div class="card saving-card">
+
+    <h2>🎯 How Much Can I Save?</h2>
+
+    <div
+      class="big-saving"
+      id="bigSaving"
+    >
+      ₹0
+    </div>
+
+    <p id="savingText">
+      Enter salary and expenses.
+    </p>
+
+  </div>
+
+
+  <!-- EXPENSE PLAN -->
+
+  <div class="card">
+
+    <h2>📝 Monthly Expense Plan</h2>
 
     <table class="plan-table">
 
       <thead>
+
         <tr>
           <th>Expense</th>
           <th>Type</th>
-          <th>Planned Amount</th>
+          <th>Amount</th>
           <th>Action</th>
         </tr>
+
       </thead>
 
       <tbody id="planTable"></tbody>
@@ -374,19 +437,8 @@ button {
   </div>
 
 
-  <!-- SAVINGS -->
-  <div class="card">
-
-    <h2>💰 Savings Plan</h2>
-
-    <p id="savingMessage">
-      Enter your salary and expenses to see your savings plan.
-    </p>
-
-  </div>
-
-
   <!-- HISTORY -->
+
   <div class="card">
 
     <h2>📚 Monthly History</h2>
@@ -400,37 +452,44 @@ button {
 
 <script>
 
-const STORAGE_KEY = "mySalaryPlannerData";
+const STORAGE_KEY =
+  "mySalaryPlannerData";
 
-let data = JSON.parse(
-  localStorage.getItem(STORAGE_KEY)
-) || {
-  months: {},
-  expenses: []
-};
+let data =
+  JSON.parse(
+    localStorage.getItem(STORAGE_KEY)
+  ) || {
+
+    months:{},
+
+    expenses:[]
+
+  };
 
 
-/* -----------------------------
-   DEFAULT MONTH
------------------------------ */
+const monthInput =
+  document.getElementById("month");
 
-const monthInput = document.getElementById("month");
 
-const today = new Date();
+const today =
+  new Date();
+
 
 const currentMonth =
   today.getFullYear() +
   "-" +
-  String(today.getMonth() + 1).padStart(2, "0");
+  String(
+    today.getMonth()+1
+  ).padStart(2,"0");
 
-monthInput.value = currentMonth;
+
+monthInput.value =
+  currentMonth;
 
 
-/* -----------------------------
-   SAVE DATA
------------------------------ */
+/* SAVE */
 
-function saveData() {
+function saveData(){
 
   localStorage.setItem(
     STORAGE_KEY,
@@ -440,60 +499,72 @@ function saveData() {
 }
 
 
-/* -----------------------------
-   CURRENCY
------------------------------ */
+/* MONEY */
 
-function money(value) {
+function money(value){
 
   return "₹" +
-    Number(value || 0).toLocaleString("en-IN");
+    Number(value || 0)
+    .toLocaleString("en-IN");
 
 }
 
 
-/* -----------------------------
-   GET CURRENT MONTH
------------------------------ */
+/* MONTH */
 
-function getMonth() {
+function getMonth(){
 
   return monthInput.value;
 
 }
 
 
-/* -----------------------------
-   SAVE SALARY
------------------------------ */
+/* SAVE SALARY */
 
-function saveSalary() {
+function saveSalary(){
 
-  const month = getMonth();
+  const month =
+    getMonth();
 
   const salary =
-    Number(document.getElementById("salary").value);
+    Number(
+      document.getElementById(
+        "salary"
+      ).value
+    );
 
-  if (!month) {
-    alert("Please select a month.");
+  if(!month){
+
+    alert(
+      "Please select month."
+    );
+
     return;
   }
 
-  if (salary < 0) {
-    alert("Salary cannot be negative.");
+  if(salary < 0){
+
+    alert(
+      "Salary cannot be negative."
+    );
+
     return;
   }
 
-  if (!data.months[month]) {
+  if(!data.months[month]){
 
     data.months[month] = {
-      salary: salary,
-      expenseAmounts: {}
+
+      salary:salary,
+
+      expenseAmounts:{}
+
     };
 
-  } else {
+  }else{
 
-    data.months[month].salary = salary;
+    data.months[month].salary =
+      salary;
 
   }
 
@@ -502,147 +573,163 @@ function saveSalary() {
   render();
 
   alert(
-    "Salary saved for " + month + "!"
+    "Salary saved successfully!"
   );
 
 }
 
 
-/* -----------------------------
-   ADD EXPENSE
------------------------------ */
+/* ADD EXPENSE */
 
-function addExpense() {
+function addExpense(){
 
   const name =
-    document.getElementById("expenseName").value.trim();
+    document
+      .getElementById(
+        "expenseName"
+      )
+      .value
+      .trim();
 
   const amount =
-    Number(document.getElementById("expenseAmount").value);
+    Number(
+      document
+        .getElementById(
+          "expenseAmount"
+        )
+        .value
+    );
 
   const type =
-    document.getElementById("expenseType").value;
+    document
+      .getElementById(
+        "expenseType"
+      )
+      .value;
 
-  if (!name) {
-    alert("Please enter expense name.");
+
+  if(!name){
+
+    alert(
+      "Please enter expense name."
+    );
+
     return;
   }
 
-  if (amount < 0) {
-    alert("Amount cannot be negative.");
+  if(amount < 0){
+
+    alert(
+      "Amount cannot be negative."
+    );
+
     return;
   }
+
 
   const expense = {
 
-    id: Date.now(),
+    id:Date.now(),
 
-    name: name,
+    name:name,
 
-    defaultAmount: amount,
+    defaultAmount:amount,
 
-    type: type
+    type:type
 
   };
 
-  data.expenses.push(expense);
 
-  const month = getMonth();
+  data.expenses.push(
+    expense
+  );
 
-  if (!data.months[month]) {
+
+  const month =
+    getMonth();
+
+
+  if(!data.months[month]){
 
     data.months[month] = {
-      salary: 0,
-      expenseAmounts: {}
+
+      salary:0,
+
+      expenseAmounts:{}
+
     };
 
   }
 
-  data.months[month].expenseAmounts[
+
+  data.months[
+    month
+  ].expenseAmounts[
     expense.id
   ] = amount;
 
+
   saveData();
 
-  document.getElementById("expenseName").value = "";
 
-  document.getElementById("expenseAmount").value = "";
+  document
+    .getElementById(
+      "expenseName"
+    )
+    .value = "";
+
+
+  document
+    .getElementById(
+      "expenseAmount"
+    )
+    .value = "";
+
 
   render();
 
 }
 
 
-/* -----------------------------
-   DELETE EXPENSE
------------------------------ */
+/* DELETE */
 
-function deleteExpense(id) {
+function deleteExpense(id){
 
-  if (!confirm("Delete this expense?")) {
+  if(
+    !confirm(
+      "Delete this expense?"
+    )
+  ){
+
     return;
+
   }
+
 
   data.expenses =
     data.expenses.filter(
       e => e.id !== id
     );
 
-  Object.keys(data.months).forEach(month => {
 
-    if (
-      data.months[month].expenseAmounts
-    ) {
+  Object.keys(
+    data.months
+  ).forEach(month => {
 
-      delete data.months[month].expenseAmounts[id];
+    if(
+      data.months[
+        month
+      ].expenseAmounts
+    ){
+
+      delete data.months[
+        month
+      ].expenseAmounts[id];
 
     }
 
   });
 
-  saveData();
-
-  render();
-
-}
-
-
-/* -----------------------------
-   CHANGE MONTH
------------------------------ */
-
-monthInput.addEventListener(
-  "change",
-  function() {
-
-    render();
-
-  }
-);
-
-
-/* -----------------------------
-   UPDATE MONTH EXPENSE
------------------------------ */
-
-function updateExpenseAmount(
-  id,
-  value
-) {
-
-  const month = getMonth();
-
-  if (!data.months[month]) {
-
-    data.months[month] = {
-      salary: 0,
-      expenseAmounts: {}
-    };
-
-  }
-
-  data.months[month].expenseAmounts[id] =
-    Number(value || 0);
 
   saveData();
 
@@ -651,29 +738,30 @@ function updateExpenseAmount(
 }
 
 
-/* -----------------------------
-   EDIT EXPENSE NAME
------------------------------ */
+/* EDIT NAME */
 
-function editExpense(id) {
+function editExpense(id){
 
   const expense =
     data.expenses.find(
       e => e.id === id
     );
 
-  if (!expense) return;
+
+  if(!expense) return;
+
 
   const newName =
     prompt(
-      "Enter new expense name:",
+      "Enter expense name:",
       expense.name
     );
 
-  if (
+
+  if(
     newName &&
     newName.trim()
-  ) {
+  ){
 
     expense.name =
       newName.trim();
@@ -687,29 +775,39 @@ function editExpense(id) {
 }
 
 
-/* -----------------------------
-   GET MONTH EXPENSE AMOUNT
------------------------------ */
+/* GET AMOUNT */
 
 function getExpenseAmount(
   expense,
   month
-) {
+){
 
-  if (
+  if(
+
     data.months[month] &&
-    data.months[month].expenseAmounts &&
-    data.months[month].expenseAmounts[
+
+    data.months[
+      month
+    ].expenseAmounts &&
+
+    data.months[
+      month
+    ].expenseAmounts[
       expense.id
     ] !== undefined
-  ) {
+
+  ){
 
     return Number(
-      data.months[month]
-        .expenseAmounts[expense.id]
+      data.months[
+        month
+      ].expenseAmounts[
+        expense.id
+      ]
     );
 
   }
+
 
   return Number(
     expense.defaultAmount || 0
@@ -718,16 +816,54 @@ function getExpenseAmount(
 }
 
 
-/* -----------------------------
-   RENDER EXPENSE LIST
------------------------------ */
+/* UPDATE MONTH AMOUNT */
 
-function renderExpenseList() {
+function updateExpenseAmount(
+  id,
+  value
+){
+
+  const month =
+    getMonth();
+
+
+  if(!data.months[month]){
+
+    data.months[month] = {
+
+      salary:0,
+
+      expenseAmounts:{}
+
+    };
+
+  }
+
+
+  data.months[
+    month
+  ].expenseAmounts[id] =
+    Number(value || 0);
+
+
+  saveData();
+
+  render();
+
+}
+
+
+/* EXPENSE LIST */
+
+function renderExpenseList(){
 
   const container =
-    document.getElementById("expenseList");
+    document.getElementById(
+      "expenseList"
+    );
 
-  if (!data.expenses.length) {
+
+  if(!data.expenses.length){
 
     container.innerHTML = `
       <div class="empty">
@@ -739,19 +875,23 @@ function renderExpenseList() {
 
   }
 
-  container.innerHTML = data.expenses
-    .map(expense => {
 
-      return `
+  container.innerHTML =
+    data.expenses
+      .map(expense => `
 
         <div class="expense-item">
 
           <strong>
-            ${escapeHTML(expense.name)}
+            ${escapeHTML(
+              expense.name
+            )}
           </strong>
 
           <span>
-            ${money(expense.defaultAmount)}
+            ${money(
+              expense.defaultAmount
+            )}
           </span>
 
           <span class="badge">
@@ -762,14 +902,22 @@ function renderExpenseList() {
 
             <button
               class="gray"
-              onclick="editExpense(${expense.id})"
+              onclick="
+                editExpense(
+                  ${expense.id}
+                )
+              "
             >
               Edit
             </button>
 
             <button
               class="red"
-              onclick="deleteExpense(${expense.id})"
+              onclick="
+                deleteExpense(
+                  ${expense.id}
+                )
+              "
             >
               Delete
             </button>
@@ -778,176 +926,244 @@ function renderExpenseList() {
 
         </div>
 
-      `;
-
-    })
-    .join("");
+      `)
+      .join("");
 
 }
 
 
-/* -----------------------------
-   RENDER PLAN
------------------------------ */
+/* PLAN */
 
-function renderPlan() {
+function renderPlan(){
 
-  const month = getMonth();
+  const month =
+    getMonth();
+
 
   const monthData =
     data.months[month] || {
-      salary: 0,
-      expenseAmounts: {}
+
+      salary:0,
+
+      expenseAmounts:{}
+
     };
 
-  const salary =
-    Number(monthData.salary || 0);
 
-  document.getElementById("salary").value =
+  const salary =
+    Number(
+      monthData.salary || 0
+    );
+
+
+  document.getElementById(
+    "salary"
+  ).value =
     salary || "";
 
-  document.getElementById("summarySalary")
-    .textContent = money(salary);
+
+  document.getElementById(
+    "summarySalary"
+  ).textContent =
+    money(salary);
 
 
   let totalExpenses = 0;
 
+
   const rows =
-    data.expenses.map(expense => {
+    data.expenses
+      .map(expense => {
 
-      const amount =
-        getExpenseAmount(
-          expense,
-          month
-        );
-
-      totalExpenses += amount;
-
-      return `
-
-        <tr>
-
-          <td>
-            ${escapeHTML(expense.name)}
-          </td>
-
-          <td>
-            <span class="badge">
-              ${expense.type}
-            </span>
-          </td>
-
-          <td>
-
-            <input
-              type="number"
-              value="${amount}"
-              min="0"
-              onchange="
-                updateExpenseAmount(
-                  ${expense.id},
-                  this.value
-                )
-              "
-            >
-
-          </td>
-
-          <td>
-
-            <button
-              class="red"
-              style="width:auto;padding:8px 12px;"
-              onclick="
-                deleteExpense(${expense.id})
-              "
-            >
-              Delete
-            </button>
-
-          </td>
-
-        </tr>
-
-      `;
-
-    }).join("");
+        const amount =
+          getExpenseAmount(
+            expense,
+            month
+          );
 
 
-  document.getElementById("planTable")
-    .innerHTML = rows ||
+        totalExpenses +=
+          amount;
+
+
+        return `
+
+          <tr>
+
+            <td>
+              ${escapeHTML(
+                expense.name
+              )}
+            </td>
+
+            <td>
+
+              <span class="badge">
+                ${expense.type}
+              </span>
+
+            </td>
+
+            <td>
+
+              <input
+                type="number"
+                min="0"
+                value="${amount}"
+                onchange="
+                  updateExpenseAmount(
+                    ${expense.id},
+                    this.value
+                  )
+                "
+              >
+
+            </td>
+
+            <td>
+
+              <button
+                class="red"
+                style="
+                  width:auto;
+                  padding:8px 12px;
+                "
+                onclick="
+                  deleteExpense(
+                    ${expense.id}
+                  )
+                "
+              >
+                Delete
+              </button>
+
+            </td>
+
+          </tr>
+
+        `;
+
+      })
+      .join("");
+
+
+  document.getElementById(
+    "planTable"
+  ).innerHTML =
+    rows ||
+
     `
+
       <tr>
+
         <td colspan="4">
+
           <div class="empty">
             Add your expenses above.
           </div>
+
         </td>
+
       </tr>
+
     `;
 
 
-  const balance =
+  /*
+    MAIN SAVING CALCULATION
+
+    SALARY - TOTAL EXPENSE
+    = HOW MUCH CAN SAVE
+  */
+
+  const canSave =
     salary - totalExpenses;
 
-  let savings = balance > 0
-    ? balance
-    : 0;
 
-
-  document.getElementById("summaryExpenses")
-    .textContent =
+  document.getElementById(
+    "summaryExpenses"
+  ).textContent =
     money(totalExpenses);
 
-  document.getElementById("summarySavings")
-    .textContent =
-    money(savings);
 
-  document.getElementById("summaryBalance")
-    .textContent =
-    money(balance);
-
-
-  const savingMessage =
-    document.getElementById("savingMessage");
+  document.getElementById(
+    "summarySaving"
+  ).textContent =
+    money(
+      canSave > 0
+        ? canSave
+        : 0
+    );
 
 
-  if (salary === 0) {
+  document.getElementById(
+    "summaryRemaining"
+  ).textContent =
+    money(canSave);
 
-    savingMessage.innerHTML =
-      "💡 Enter your salary to calculate your monthly plan.";
+
+  document.getElementById(
+    "bigSaving"
+  ).textContent =
+    money(
+      canSave > 0
+        ? canSave
+        : 0
+    );
+
+
+  const savingText =
+    document.getElementById(
+      "savingText"
+    );
+
+
+  if(salary === 0){
+
+    savingText.innerHTML =
+      "💡 First enter your monthly salary.";
 
   }
 
-  else if (balance > 0) {
+  else if(canSave > 0){
 
-    savingMessage.innerHTML = `
-      🎯 After your planned expenses,
-      you can keep approximately
-      <strong>${money(balance)}</strong>
-      as savings / emergency money this month.
+    savingText.innerHTML = `
+
+      After all your planned expenses,
+
+      <strong>
+        ${money(canSave)}
+      </strong>
+
+      can be saved this month. 💰
+
     `;
 
   }
 
-  else if (balance === 0) {
+  else if(canSave === 0){
 
-    savingMessage.innerHTML = `
-      ⚠️ Your salary is completely allocated
-      to your planned expenses.
+    savingText.innerHTML = `
+
+      Your entire salary is allocated
+      to expenses.
+
     `;
 
   }
 
-  else {
+  else{
 
-    savingMessage.innerHTML = `
-      🚨 Your planned expenses are
-      <strong>${money(
-        Math.abs(balance)
-      )}</strong>
-      higher than your salary.
-      Consider reducing some expenses.
+    savingText.innerHTML = `
+
+      <strong>
+        ⚠️ Your expenses are
+        ${money(
+          Math.abs(canSave)
+        )}
+        higher than your salary.
+      </strong>
+
     `;
 
   }
@@ -955,107 +1171,161 @@ function renderPlan() {
 }
 
 
-/* -----------------------------
-   HISTORY
------------------------------ */
+/* HISTORY */
 
-function renderHistory() {
+function renderHistory(){
 
   const container =
-    document.getElementById("history");
+    document.getElementById(
+      "history"
+    );
+
 
   const months =
-    Object.keys(data.months)
-      .sort()
-      .reverse();
+    Object.keys(
+      data.months
+    )
+    .sort()
+    .reverse();
 
-  if (!months.length) {
+
+  if(!months.length){
 
     container.innerHTML = `
+
       <div class="empty">
         No monthly history yet.
       </div>
+
     `;
 
     return;
 
   }
 
+
   container.innerHTML =
-    months.map(month => {
+    months
+      .map(month => {
 
-      const monthData =
-        data.months[month];
-
-      const salary =
-        Number(monthData.salary || 0);
-
-      let total = 0;
-
-      data.expenses.forEach(expense => {
-
-        total +=
-          getExpenseAmount(
-            expense,
+        const monthData =
+          data.months[
             month
+          ];
+
+
+        const salary =
+          Number(
+            monthData.salary || 0
           );
 
-      });
 
-      const balance =
-        salary - total;
+        let total = 0;
 
-      return `
 
-        <div class="history-item">
+        data.expenses
+          .forEach(expense => {
 
-          <strong>
-            📅 ${month}
-          </strong>
+            total +=
+              getExpenseAmount(
+                expense,
+                month
+              );
 
-          Salary:
-          ${money(salary)}
-          &nbsp; | &nbsp;
+          });
 
-          Expenses:
-          ${money(total)}
-          &nbsp; | &nbsp;
 
-          Balance:
-          <strong>
-            ${money(balance)}
-          </strong>
+        const saving =
+          salary - total;
 
-        </div>
 
-      `;
+        return `
 
-    }).join("");
+          <div class="history-item">
+
+            <strong>
+              📅 ${month}
+            </strong>
+
+            Salary:
+            ${money(salary)}
+
+            &nbsp; | &nbsp;
+
+            Expenses:
+            ${money(total)}
+
+            &nbsp; | &nbsp;
+
+            Can Save:
+
+            <strong>
+              ${money(
+                saving > 0
+                  ? saving
+                  : 0
+              )}
+            </strong>
+
+          </div>
+
+        `;
+
+      })
+      .join("");
 
 }
 
 
-/* -----------------------------
-   ESCAPE HTML
------------------------------ */
+/* ESCAPE */
 
-function escapeHTML(text) {
+function escapeHTML(text){
 
   return String(text)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;");
+
+    .replace(
+      /&/g,
+      "&amp;"
+    )
+
+    .replace(
+      /</g,
+      "&lt;"
+    )
+
+    .replace(
+      />/g,
+      "&gt;"
+    )
+
+    .replace(
+      /"/g,
+      "&quot;"
+    )
+
+    .replace(
+      /'/g,
+      "&#039;"
+    );
 
 }
 
 
-/* -----------------------------
-   MAIN RENDER
------------------------------ */
+/* MONTH CHANGE */
 
-function render() {
+monthInput.addEventListener(
+  "change",
+  function(){
+
+    render();
+
+  }
+);
+
+
+/* RENDER */
+
+function render(){
 
   renderExpenseList();
 
@@ -1065,10 +1335,6 @@ function render() {
 
 }
 
-
-/* -----------------------------
-   START
------------------------------ */
 
 render();
 
