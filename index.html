@@ -14,25 +14,27 @@
 }
 
 body{
-  font-family:Arial,sans-serif;
-  background:#f3f6fa;
-  color:#172033;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f3f6fb;
+  color:#1f2937;
+  padding-bottom:40px;
 }
 
 header{
-  background:#111827;
+  background:linear-gradient(135deg,#111827,#2563eb);
   color:white;
+  padding:28px 20px;
   text-align:center;
-  padding:25px 15px;
 }
 
 header h1{
-  font-size:29px;
+  font-size:30px;
+  margin-bottom:8px;
 }
 
 header p{
-  margin-top:7px;
-  color:#cbd5e1;
+  opacity:.9;
+  font-size:14px;
 }
 
 .container{
@@ -43,210 +45,319 @@ header p{
 
 .card{
   background:white;
-  border-radius:16px;
+  border-radius:18px;
   padding:22px;
   margin-bottom:20px;
-  box-shadow:0 5px 18px rgba(0,0,0,.07);
+  box-shadow:0 8px 25px rgba(0,0,0,.07);
 }
 
 .card h2{
   margin-bottom:18px;
-}
-
-.form-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr 180px;
-  gap:12px;
+  color:#111827;
 }
 
 label{
   display:block;
-  margin-bottom:6px;
   font-size:14px;
   font-weight:bold;
+  margin-bottom:7px;
+  color:#374151;
 }
 
-input,select,button{
+input,select{
   width:100%;
   padding:12px;
-  border-radius:9px;
   border:1px solid #d1d5db;
+  border-radius:10px;
   font-size:15px;
+  outline:none;
+  background:white;
+}
+
+input:focus,select:focus{
+  border-color:#2563eb;
+  box-shadow:0 0 0 3px rgba(37,99,235,.1);
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+}
+
+.form-grid-3{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
 }
 
 button{
   border:none;
-  cursor:pointer;
+  border-radius:10px;
+  padding:12px 18px;
+  font-size:14px;
   font-weight:bold;
+  cursor:pointer;
 }
 
-.primary{
+.btn-primary{
   background:#2563eb;
   color:white;
 }
 
-.green{
-  background:#16a34a;
-  color:white;
+.btn-primary:hover{
+  background:#1d4ed8;
 }
 
-.red{
-  background:#dc2626;
-  color:white;
+.btn-danger{
+  background:#fee2e2;
+  color:#dc2626;
 }
 
-.gray{
-  background:#64748b;
-  color:white;
+.btn-edit{
+  background:#e0e7ff;
+  color:#3730a3;
 }
 
-.expense-grid{
-  display:grid;
-  grid-template-columns:1fr 180px 160px 100px;
-  gap:10px;
+.btn-small{
+  padding:8px 11px;
+  font-size:12px;
+  margin:2px;
 }
 
 .summary{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:15px;
+  margin-bottom:20px;
 }
 
 .summary-box{
-  background:#f8fafc;
+  background:white;
+  border-radius:16px;
   padding:20px;
-  border-radius:14px;
-  text-align:center;
+  box-shadow:0 7px 20px rgba(0,0,0,.06);
 }
 
-.summary-box small{
-  display:block;
-  color:#64748b;
+.summary-box .title{
+  font-size:13px;
+  color:#6b7280;
   margin-bottom:8px;
 }
 
-.summary-box strong{
-  font-size:23px;
+.summary-box .value{
+  font-size:24px;
+  font-weight:bold;
 }
 
-.salary{
+.salary .value{
   color:#2563eb;
 }
 
-.expenses{
+.expenses .value{
   color:#dc2626;
 }
 
-.saving{
+.save .value{
   color:#16a34a;
 }
 
-.remaining{
+.remaining .value{
   color:#7c3aed;
 }
 
 .saving-card{
-  background:#ecfdf5;
-  border:2px solid #86efac;
+  background:linear-gradient(135deg,#065f46,#10b981);
+  color:white;
   text-align:center;
+  border-radius:20px;
+  padding:30px;
+  margin-bottom:20px;
+  box-shadow:0 10px 30px rgba(16,185,129,.25);
 }
 
 .saving-card h2{
-  color:#15803d;
+  color:white;
+  margin-bottom:10px;
 }
 
-.big-saving{
-  font-size:38px;
+.saving-amount{
+  font-size:40px;
   font-weight:bold;
-  color:#16a34a;
-  margin:12px 0;
 }
 
-.plan-table{
+.table-wrap{
+  overflow-x:auto;
+}
+
+table{
   width:100%;
   border-collapse:collapse;
+  min-width:700px;
 }
 
-.plan-table th,
-.plan-table td{
-  padding:13px;
-  border-bottom:1px solid #e5e7eb;
+th{
+  background:#111827;
+  color:white;
+  padding:12px;
   text-align:left;
+  font-size:13px;
 }
 
-.plan-table th{
-  background:#f8fafc;
+td{
+  padding:12px;
+  border-bottom:1px solid #e5e7eb;
+  font-size:14px;
 }
 
-.plan-table input{
-  max-width:160px;
+tr:hover td{
+  background:#f9fafb;
 }
 
 .badge{
   display:inline-block;
-  padding:6px 10px;
+  padding:5px 9px;
   border-radius:20px;
-  background:#e5e7eb;
-  font-size:12px;
+  font-size:11px;
+  font-weight:bold;
 }
 
-.expense-list{
+.fixed{
+  background:#dbeafe;
+  color:#1d4ed8;
+}
+
+.variable{
+  background:#fef3c7;
+  color:#92400e;
+}
+
+.one-time{
+  background:#ede9fe;
+  color:#6d28d9;
+}
+
+.loan-box{
+  background:linear-gradient(135deg,#1e1b4b,#4c1d95);
+  color:white;
+  border-radius:20px;
+  padding:25px;
+  margin-bottom:20px;
+}
+
+.loan-box h2{
+  color:white;
+}
+
+.loan-info{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
   margin-top:20px;
 }
 
-.expense-item{
-  display:grid;
-  grid-template-columns:1fr 130px 120px 160px;
-  gap:10px;
-  align-items:center;
-  padding:14px 0;
-  border-bottom:1px solid #e5e7eb;
+.loan-stat{
+  background:rgba(255,255,255,.12);
+  border-radius:14px;
+  padding:15px;
 }
 
-.actions{
+.loan-stat .label{
+  color:#ddd6fe;
+  font-size:12px;
+  margin-bottom:6px;
+}
+
+.loan-stat .number{
+  font-size:21px;
+  font-weight:bold;
+}
+
+.loan-result{
+  background:white;
+  color:#111827;
+  border-radius:15px;
+  padding:18px;
+  margin-top:18px;
+}
+
+.loan-result-row{
   display:flex;
-  gap:7px;
-}
-
-.actions button{
-  width:auto;
-  padding:8px 12px;
-}
-
-.history-item{
-  padding:14px 0;
+  justify-content:space-between;
+  padding:9px 0;
   border-bottom:1px solid #e5e7eb;
+}
+
+.loan-result-row:last-child{
+  border-bottom:none;
+}
+
+.interest{
+  color:#dc2626;
+  font-weight:bold;
+}
+
+.total-pay{
+  color:#7c3aed;
+  font-weight:bold;
+}
+
+.complete{
+  color:#16a34a;
+  font-weight:bold;
 }
 
 .empty{
   text-align:center;
-  padding:20px;
-  color:#64748b;
+  padding:25px;
+  color:#6b7280;
 }
 
-.warning{
-  background:#fff7ed;
-  border:1px solid #fdba74;
-  color:#c2410c;
-  padding:15px;
-  border-radius:10px;
-  margin-top:15px;
+.section-note{
+  background:#eff6ff;
+  border-left:4px solid #2563eb;
+  padding:12px;
+  border-radius:8px;
+  font-size:13px;
+  margin-bottom:15px;
+  color:#374151;
 }
 
 @media(max-width:800px){
+  .summary{
+    grid-template-columns:repeat(2,1fr);
+  }
 
-  .form-grid,
-  .expense-grid,
+  .loan-info{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .form-grid-3{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:600px){
+  header h1{
+    font-size:24px;
+  }
+
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
   .summary{
     grid-template-columns:1fr;
   }
 
-  .expense-item{
-    grid-template-columns:1fr 1fr;
+  .loan-info{
+    grid-template-columns:1fr;
   }
 
+  .saving-amount{
+    font-size:32px;
+  }
 }
-
 </style>
 </head>
 
@@ -254,196 +365,240 @@ button{
 
 <header>
   <h1>💰 My Salary Planner</h1>
-  <p>Plan your salary • Control expenses • Know your savings</p>
+  <p>Plan your salary, expenses, savings & loan repayment</p>
 </header>
 
 <div class="container">
 
-  <!-- SALARY -->
-
+  <!-- MONTH & SALARY -->
   <div class="card">
-
-    <h2>💰 Monthly Salary</h2>
+    <h2>📅 Monthly Salary</h2>
 
     <div class="form-grid">
-
       <div>
-        <label>Month</label>
+        <label>Select Month</label>
         <input type="month" id="month">
       </div>
 
       <div>
-        <label>Salary</label>
-        <input
-          type="number"
-          id="salary"
-          placeholder="Enter salary"
-        >
+        <label>Monthly Salary (₹)</label>
+        <input type="number" id="salary" placeholder="Example: 30000" min="0">
       </div>
-
-      <div style="display:flex;align-items:end;">
-        <button
-          class="primary"
-          onclick="saveSalary()"
-        >
-          Save Salary
-        </button>
-      </div>
-
     </div>
 
+    <br>
+
+    <button class="btn-primary" onclick="saveSalary()">
+      💾 Save Salary
+    </button>
   </div>
 
 
-  <!-- ADD EXPENSE -->
+  <!-- LOAN SECTION -->
+  <div class="loan-box">
 
-  <div class="card">
+    <h2>🏦 Loan / Debt Planner</h2>
 
-    <h2>➕ My Monthly Expenses</h2>
+    <div class="section-note">
+      Enter your loan amount, annual interest rate and monthly payment.
+      The planner will estimate interest, total payment, duration and completion month.
+    </div>
 
-    <div class="expense-grid">
+    <div class="form-grid-3">
 
-      <input
-        type="text"
-        id="expenseName"
-        placeholder="Expense name e.g. Rent"
-      >
+      <div>
+        <label style="color:white;">Loan Name</label>
+        <input type="text" id="loanName" placeholder="Example: Personal Loan">
+      </div>
 
-      <input
-        type="number"
-        id="expenseAmount"
-        placeholder="Amount"
-      >
+      <div>
+        <label style="color:white;">Loan Amount (₹)</label>
+        <input type="number" id="loanAmount" placeholder="100000" min="0">
+      </div>
 
-      <select id="expenseType">
-        <option value="Fixed">Fixed</option>
-        <option value="Variable">Variable</option>
-        <option value="One-time">One-time</option>
-      </select>
+      <div>
+        <label style="color:white;">Annual Interest (%)</label>
+        <input type="number" id="interestRate" placeholder="12" min="0" step="0.01">
+      </div>
 
-      <button
-        class="green"
-        onclick="addExpense()"
-      >
-        Add
-      </button>
+      <div>
+        <label style="color:white;">Monthly Payment (₹)</label>
+        <input type="number" id="monthlyPayment" placeholder="5500" min="0">
+      </div>
+
+      <div>
+        <label style="color:white;">Loan Start Month</label>
+        <input type="month" id="loanStartMonth">
+      </div>
 
     </div>
 
-    <div
-      class="expense-list"
-      id="expenseList"
-    ></div>
+    <br>
+
+    <button class="btn-primary" onclick="saveLoan()">
+      💾 Save / Calculate Loan
+    </button>
+
+    <div id="loanOutput"></div>
 
   </div>
 
 
   <!-- SUMMARY -->
+  <div class="summary">
 
-  <div class="card">
+    <div class="summary-box salary">
+      <div class="title">💰 Salary</div>
+      <div class="value" id="summarySalary">₹0</div>
+    </div>
 
-    <h2>📊 This Month</h2>
+    <div class="summary-box expenses">
+      <div class="title">💸 Total Expenses</div>
+      <div class="value" id="summaryExpenses">₹0</div>
+    </div>
 
-    <div class="summary">
+    <div class="summary-box save">
+      <div class="title">💚 Can Save</div>
+      <div class="value" id="summarySave">₹0</div>
+    </div>
 
-      <div class="summary-box">
-        <small>Salary</small>
-        <strong
-          class="salary"
-          id="summarySalary"
-        >
-          ₹0
-        </strong>
-      </div>
-
-      <div class="summary-box">
-        <small>Total Expenses</small>
-        <strong
-          class="expenses"
-          id="summaryExpenses"
-        >
-          ₹0
-        </strong>
-      </div>
-
-      <div class="summary-box">
-        <small>Can Save</small>
-        <strong
-          class="saving"
-          id="summarySaving"
-        >
-          ₹0
-        </strong>
-      </div>
-
-      <div class="summary-box">
-        <small>Remaining</small>
-        <strong
-          class="remaining"
-          id="summaryRemaining"
-        >
-          ₹0
-        </strong>
-      </div>
-
+    <div class="summary-box remaining">
+      <div class="title">📊 Remaining</div>
+      <div class="value" id="summaryRemaining">₹0</div>
     </div>
 
   </div>
 
 
-  <!-- SAVING -->
+  <!-- SAVINGS -->
+  <div class="saving-card">
 
-  <div class="card saving-card">
+    <h2>💚 How Much Can I Save?</h2>
 
-    <h2>🎯 How Much Can I Save?</h2>
-
-    <div
-      class="big-saving"
-      id="bigSaving"
-    >
+    <div class="saving-amount" id="bigSaving">
       ₹0
     </div>
 
-    <p id="savingText">
-      Enter salary and expenses.
+    <p style="margin-top:8px;">
+      Estimated savings after planned expenses & loan payment
     </p>
 
   </div>
 
 
-  <!-- EXPENSE PLAN -->
-
+  <!-- ADD EXPENSE -->
   <div class="card">
 
-    <h2>📝 Monthly Expense Plan</h2>
+    <h2>➕ Add Expense</h2>
 
-    <table class="plan-table">
+    <div class="form-grid">
 
-      <thead>
+      <div>
+        <label>Expense Name</label>
+        <input type="text" id="expenseName" placeholder="Example: Rent">
+      </div>
 
-        <tr>
-          <th>Expense</th>
-          <th>Type</th>
-          <th>Amount</th>
-          <th>Action</th>
-        </tr>
+      <div>
+        <label>Default Amount (₹)</label>
+        <input type="number" id="expenseAmount" placeholder="5000" min="0">
+      </div>
 
-      </thead>
+      <div>
+        <label>Expense Type</label>
+        <select id="expenseType">
+          <option value="Fixed">Fixed</option>
+          <option value="Variable">Variable</option>
+          <option value="One-time">One-time</option>
+        </select>
+      </div>
 
-      <tbody id="planTable"></tbody>
+    </div>
 
-    </table>
+    <br>
+
+    <button class="btn-primary" onclick="addExpense()">
+      ➕ Add Expense
+    </button>
+
+  </div>
+
+
+  <!-- EXPENSE LIST -->
+  <div class="card">
+
+    <h2>🧾 My Expenses</h2>
+
+    <div class="table-wrap">
+
+      <table>
+
+        <thead>
+          <tr>
+            <th>Expense</th>
+            <th>Type</th>
+            <th>Current Month Amount</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody id="expenseList"></tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+
+  <!-- MONTHLY PLAN -->
+  <div class="card">
+
+    <h2>📋 Monthly Plan</h2>
+
+    <div class="table-wrap">
+
+      <table>
+
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+
+        <tbody id="monthlyPlan"></tbody>
+
+      </table>
+
+    </div>
 
   </div>
 
 
   <!-- HISTORY -->
-
   <div class="card">
 
     <h2>📚 Monthly History</h2>
 
-    <div id="history"></div>
+    <div class="table-wrap">
+
+      <table>
+
+        <thead>
+          <tr>
+            <th>Month</th>
+            <th>Salary</th>
+            <th>Expenses</th>
+            <th>Loan</th>
+            <th>Can Save</th>
+          </tr>
+        </thead>
+
+        <tbody id="historyList"></tbody>
+
+      </table>
+
+    </div>
 
   </div>
 
@@ -452,42 +607,39 @@ button{
 
 <script>
 
-const STORAGE_KEY =
-  "mySalaryPlannerData";
+const STORAGE_KEY = "mySalaryPlannerData";
 
-let data =
-  JSON.parse(
-    localStorage.getItem(STORAGE_KEY)
-  ) || {
-
-    months:{},
-
-    expenses:[]
-
-  };
+let data = JSON.parse(
+  localStorage.getItem(STORAGE_KEY)
+) || {
+  months:{},
+  expenses:[],
+  loan:null
+};
 
 
-const monthInput =
-  document.getElementById("month");
+// -----------------------------
+// HELPERS
+// -----------------------------
+
+function money(value){
+
+  return "₹" + Number(value || 0).toLocaleString("en-IN",{
+    maximumFractionDigits:2
+  });
+
+}
 
 
-const today =
-  new Date();
+function currentMonth(){
 
+  const d = new Date();
 
-const currentMonth =
-  today.getFullYear() +
-  "-" +
-  String(
-    today.getMonth()+1
-  ).padStart(2,"0");
+  return d.getFullYear() + "-" +
+    String(d.getMonth()+1).padStart(2,"0");
 
+}
 
-monthInput.value =
-  currentMonth;
-
-
-/* SAVE */
 
 function saveData(){
 
@@ -499,133 +651,115 @@ function saveData(){
 }
 
 
-/* MONEY */
+// -----------------------------
+// MONTH
+// -----------------------------
 
-function money(value){
+document.getElementById("month").value =
+  currentMonth();
 
-  return "₹" +
-    Number(value || 0)
-    .toLocaleString("en-IN");
-
-}
-
-
-/* MONTH */
-
-function getMonth(){
-
-  return monthInput.value;
-
-}
+document.getElementById("loanStartMonth").value =
+  currentMonth();
 
 
-/* SAVE SALARY */
-
-function saveSalary(){
-
-  const month =
-    getMonth();
-
-  const salary =
-    Number(
-      document.getElementById(
-        "salary"
-      ).value
-    );
-
-  if(!month){
-
-    alert(
-      "Please select month."
-    );
-
-    return;
-  }
-
-  if(salary < 0){
-
-    alert(
-      "Salary cannot be negative."
-    );
-
-    return;
-  }
+function getMonthData(month){
 
   if(!data.months[month]){
 
     data.months[month] = {
-
-      salary:salary,
-
+      salary:0,
       expenseAmounts:{}
-
     };
 
-  }else{
-
-    data.months[month].salary =
-      salary;
-
   }
+
+  return data.months[month];
+
+}
+
+
+// -----------------------------
+// SALARY
+// -----------------------------
+
+function saveSalary(){
+
+  const month =
+    document.getElementById("month").value;
+
+  const salary =
+    Number(document.getElementById("salary").value) || 0;
+
+  if(!month){
+
+    alert("Please select month.");
+
+    return;
+  }
+
+  getMonthData(month).salary = salary;
 
   saveData();
 
   render();
 
-  alert(
-    "Salary saved successfully!"
-  );
+  alert("Salary saved successfully 👍");
 
 }
 
 
-/* ADD EXPENSE */
+function loadSalary(){
+
+  const month =
+    document.getElementById("month").value;
+
+  const monthData =
+    getMonthData(month);
+
+  document.getElementById("salary").value =
+    monthData.salary || "";
+
+}
+
+
+document.getElementById("month")
+.addEventListener("change",function(){
+
+  loadSalary();
+
+  render();
+
+});
+
+
+// -----------------------------
+// EXPENSES
+// -----------------------------
 
 function addExpense(){
 
   const name =
-    document
-      .getElementById(
-        "expenseName"
-      )
-      .value
-      .trim();
+    document.getElementById("expenseName").value.trim();
 
   const amount =
-    Number(
-      document
-        .getElementById(
-          "expenseAmount"
-        )
-        .value
-    );
+    Number(document.getElementById("expenseAmount").value) || 0;
 
   const type =
-    document
-      .getElementById(
-        "expenseType"
-      )
-      .value;
-
+    document.getElementById("expenseType").value;
 
   if(!name){
 
-    alert(
-      "Please enter expense name."
-    );
+    alert("Please enter expense name.");
 
     return;
   }
 
   if(amount < 0){
 
-    alert(
-      "Amount cannot be negative."
-    );
+    alert("Amount cannot be negative.");
 
     return;
   }
-
 
   const expense = {
 
@@ -639,97 +773,55 @@ function addExpense(){
 
   };
 
-
-  data.expenses.push(
-    expense
-  );
-
+  data.expenses.push(expense);
 
   const month =
-    getMonth();
+    document.getElementById("month").value;
 
-
-  if(!data.months[month]){
-
-    data.months[month] = {
-
-      salary:0,
-
-      expenseAmounts:{}
-
-    };
-
-  }
-
-
-  data.months[
-    month
-  ].expenseAmounts[
-    expense.id
-  ] = amount;
-
+  getMonthData(month)
+    .expenseAmounts[expense.id] = amount;
 
   saveData();
 
-
-  document
-    .getElementById(
-      "expenseName"
-    )
-    .value = "";
-
-
-  document
-    .getElementById(
-      "expenseAmount"
-    )
-    .value = "";
-
+  document.getElementById("expenseName").value="";
+  document.getElementById("expenseAmount").value="";
 
   render();
 
 }
 
 
-/* DELETE */
+function getExpenseAmount(expense,month){
 
-function deleteExpense(id){
+  const monthData =
+    getMonthData(month);
 
   if(
-    !confirm(
-      "Delete this expense?"
+    Object.prototype.hasOwnProperty.call(
+      monthData.expenseAmounts,
+      expense.id
     )
   ){
 
-    return;
+    return Number(
+      monthData.expenseAmounts[expense.id]
+    ) || 0;
 
   }
 
+  return Number(expense.defaultAmount) || 0;
 
-  data.expenses =
-    data.expenses.filter(
-      e => e.id !== id
-    );
+}
 
 
-  Object.keys(
-    data.months
-  ).forEach(month => {
+function updateExpenseAmount(id,value){
 
-    if(
-      data.months[
-        month
-      ].expenseAmounts
-    ){
+  const month =
+    document.getElementById("month").value;
 
-      delete data.months[
-        month
-      ].expenseAmounts[id];
-
-    }
-
-  });
-
+  getMonthData(month)
+    .expenseAmounts[id] =
+      Number(value) || 0;
 
   saveData();
 
@@ -737,31 +829,21 @@ function deleteExpense(id){
 
 }
 
-
-/* EDIT NAME */
 
 function editExpense(id){
 
   const expense =
-    data.expenses.find(
-      e => e.id === id
-    );
-
+    data.expenses.find(e => e.id === id);
 
   if(!expense) return;
 
-
   const newName =
     prompt(
-      "Enter expense name:",
+      "Enter new expense name:",
       expense.name
     );
 
-
-  if(
-    newName &&
-    newName.trim()
-  ){
+  if(newName && newName.trim()){
 
     expense.name =
       newName.trim();
@@ -775,76 +857,30 @@ function editExpense(id){
 }
 
 
-/* GET AMOUNT */
+function deleteExpense(id){
 
-function getExpenseAmount(
-  expense,
-  month
-){
+  if(!confirm("Delete this expense?")){
 
-  if(
+    return;
 
-    data.months[month] &&
+  }
 
-    data.months[
-      month
-    ].expenseAmounts &&
-
-    data.months[
-      month
-    ].expenseAmounts[
-      expense.id
-    ] !== undefined
-
-  ){
-
-    return Number(
-      data.months[
-        month
-      ].expenseAmounts[
-        expense.id
-      ]
+  data.expenses =
+    data.expenses.filter(
+      e => e.id !== id
     );
 
-  }
+  Object.keys(data.months)
+  .forEach(month => {
 
+    if(data.months[month].expenseAmounts){
 
-  return Number(
-    expense.defaultAmount || 0
-  );
+      delete data.months[month]
+        .expenseAmounts[id];
 
-}
+    }
 
-
-/* UPDATE MONTH AMOUNT */
-
-function updateExpenseAmount(
-  id,
-  value
-){
-
-  const month =
-    getMonth();
-
-
-  if(!data.months[month]){
-
-    data.months[month] = {
-
-      salary:0,
-
-      expenseAmounts:{}
-
-    };
-
-  }
-
-
-  data.months[
-    month
-  ].expenseAmounts[id] =
-    Number(value || 0);
-
+  });
 
   saveData();
 
@@ -853,21 +889,254 @@ function updateExpenseAmount(
 }
 
 
-/* EXPENSE LIST */
+// -----------------------------
+// LOAN CALCULATION
+// -----------------------------
 
-function renderExpenseList(){
+function calculateLoan(){
 
-  const container =
-    document.getElementById(
-      "expenseList"
-    );
+  if(!data.loan){
+
+    return null;
+
+  }
+
+  const principal =
+    Number(data.loan.amount) || 0;
+
+  const annualRate =
+    Number(data.loan.interest) || 0;
+
+  const payment =
+    Number(data.loan.monthlyPayment) || 0;
+
+  if(principal <= 0 || payment <= 0){
+
+    return null;
+
+  }
+
+  const monthlyRate =
+    annualRate / 100 / 12;
+
+  let balance = principal;
+
+  let totalInterest = 0;
+
+  let months = 0;
+
+  let finalPayment = 0;
+
+  const maxMonths = 1200;
+
+  while(balance > 0.005 && months < maxMonths){
+
+    let interest = 0;
+
+    if(monthlyRate > 0){
+
+      interest =
+        balance * monthlyRate;
+
+    }
+
+    let paymentThisMonth =
+      payment;
+
+    let amountDue =
+      balance + interest;
+
+    if(paymentThisMonth >= amountDue){
+
+      paymentThisMonth =
+        amountDue;
+
+      finalPayment =
+        paymentThisMonth;
+
+    }
+
+    balance =
+      amountDue - paymentThisMonth;
+
+    totalInterest += interest;
+
+    months++;
+
+  }
+
+  if(months >= maxMonths){
+
+    return {
+      impossible:true
+    };
+
+  }
+
+  const totalPayable =
+    principal + totalInterest;
+
+  return {
+
+    principal:principal,
+
+    interestRate:annualRate,
+
+    monthlyPayment:payment,
+
+    totalInterest:totalInterest,
+
+    totalPayable:totalPayable,
+
+    months:months,
+
+    finalPayment:finalPayment,
+
+    remaining:Math.max(balance,0)
+
+  };
+
+}
 
 
-  if(!data.expenses.length){
+// -----------------------------
+// LOAN SAVE
+// -----------------------------
 
-    container.innerHTML = `
-      <div class="empty">
-        No expenses added yet.
+function saveLoan(){
+
+  const name =
+    document.getElementById("loanName")
+    .value.trim();
+
+  const amount =
+    Number(
+      document.getElementById("loanAmount").value
+    ) || 0;
+
+  const interest =
+    Number(
+      document.getElementById("interestRate").value
+    ) || 0;
+
+  const monthlyPayment =
+    Number(
+      document.getElementById("monthlyPayment").value
+    ) || 0;
+
+  const startMonth =
+    document.getElementById("loanStartMonth").value;
+
+  if(amount <= 0){
+
+    alert("Please enter loan amount.");
+
+    return;
+
+  }
+
+  if(monthlyPayment <= 0){
+
+    alert("Please enter monthly payment.");
+
+    return;
+
+  }
+
+  data.loan = {
+
+    name:name || "My Loan",
+
+    amount:amount,
+
+    interest:interest,
+
+    monthlyPayment:monthlyPayment,
+
+    startMonth:startMonth || currentMonth()
+
+  };
+
+  saveData();
+
+  renderLoan();
+
+  render();
+
+  alert("Loan saved & calculated successfully 👍");
+
+}
+
+
+// -----------------------------
+// ADD MONTHS
+// -----------------------------
+
+function addMonthsToMonth(month,count){
+
+  const parts =
+    month.split("-").map(Number);
+
+  const date =
+    new Date(parts[0],parts[1]-1,1);
+
+  date.setMonth(
+    date.getMonth()+count
+  );
+
+  return date.getFullYear() + "-" +
+    String(date.getMonth()+1)
+      .padStart(2,"0");
+
+}
+
+
+function formatMonth(month){
+
+  if(!month) return "-";
+
+  const parts =
+    month.split("-").map(Number);
+
+  const date =
+    new Date(parts[0],parts[1]-1,1);
+
+  return date.toLocaleDateString(
+    "en-IN",
+    {
+      month:"long",
+      year:"numeric"
+    }
+  );
+
+}
+
+
+// -----------------------------
+// LOAN RENDER
+// -----------------------------
+
+function renderLoan(){
+
+  const output =
+    document.getElementById("loanOutput");
+
+  if(!data.loan){
+
+    output.innerHTML = "";
+
+    return;
+
+  }
+
+  const result =
+    calculateLoan();
+
+  if(!result){
+
+    output.innerHTML = `
+      <div class="loan-result">
+        Please enter valid loan details.
       </div>
     `;
 
@@ -875,328 +1144,357 @@ function renderExpenseList(){
 
   }
 
+  if(result.impossible){
 
-  container.innerHTML =
-    data.expenses
-      .map(expense => `
+    output.innerHTML = `
+      <div class="loan-result">
+        Monthly payment is too low for this loan.
+      </div>
+    `;
 
-        <div class="expense-item">
+    return;
 
-          <strong>
-            ${escapeHTML(
-              expense.name
-            )}
-          </strong>
+  }
 
-          <span>
-            ${money(
-              expense.defaultAmount
-            )}
-          </span>
+  const completionMonth =
+    addMonthsToMonth(
+      data.loan.startMonth,
+      result.months - 1
+    );
 
-          <span class="badge">
-            ${expense.type}
-          </span>
 
-          <div class="actions">
+  output.innerHTML = `
 
-            <button
-              class="gray"
-              onclick="
-                editExpense(
-                  ${expense.id}
-                )
-              "
-            >
-              Edit
-            </button>
+    <div class="loan-info">
 
-            <button
-              class="red"
-              onclick="
-                deleteExpense(
-                  ${expense.id}
-                )
-              "
-            >
-              Delete
-            </button>
+      <div class="loan-stat">
+        <div class="label">Loan Amount</div>
+        <div class="number">${money(result.principal)}</div>
+      </div>
 
-          </div>
+      <div class="loan-stat">
+        <div class="label">Interest Rate</div>
+        <div class="number">${result.interestRate}%</div>
+      </div>
 
-        </div>
+      <div class="loan-stat">
+        <div class="label">Monthly Payment</div>
+        <div class="number">${money(result.monthlyPayment)}</div>
+      </div>
 
-      `)
-      .join("");
+      <div class="loan-stat">
+        <div class="label">Duration</div>
+        <div class="number">${result.months} Months</div>
+      </div>
+
+    </div>
+
+
+    <div class="loan-result">
+
+      <div class="loan-result-row">
+        <span>Total Interest</span>
+        <span class="interest">
+          ${money(result.totalInterest)}
+        </span>
+      </div>
+
+      <div class="loan-result-row">
+        <span>Total Amount to Pay</span>
+        <span class="total-pay">
+          ${money(result.totalPayable)}
+        </span>
+      </div>
+
+      <div class="loan-result-row">
+        <span>Regular Monthly Payment</span>
+        <span>
+          ${money(result.monthlyPayment)}
+        </span>
+      </div>
+
+      <div class="loan-result-row">
+        <span>Final Payment</span>
+        <span class="complete">
+          ${money(result.finalPayment)}
+        </span>
+      </div>
+
+      <div class="loan-result-row">
+        <span>Expected Completion</span>
+        <span class="complete">
+          ${formatMonth(completionMonth)}
+        </span>
+      </div>
+
+      <div class="loan-result-row">
+        <span>Loan Name</span>
+        <span>
+          ${escapeHtml(data.loan.name)}
+        </span>
+      </div>
+
+    </div>
+
+  `;
 
 }
 
 
-/* PLAN */
+// -----------------------------
+// EXPENSE LIST
+// -----------------------------
+
+function renderExpenses(){
+
+  const tbody =
+    document.getElementById("expenseList");
+
+  const month =
+    document.getElementById("month").value;
+
+  if(data.expenses.length === 0){
+
+    tbody.innerHTML = `
+      <tr>
+        <td colspan="4" class="empty">
+          No expenses added yet.
+        </td>
+      </tr>
+    `;
+
+    return;
+
+  }
+
+  tbody.innerHTML =
+    data.expenses.map(expense => {
+
+      const amount =
+        getExpenseAmount(
+          expense,
+          month
+        );
+
+      let badgeClass =
+        expense.type.toLowerCase();
+
+      tbody.innerHTML = "";
+
+      return `
+        <tr>
+
+          <td>
+            <strong>
+              ${escapeHtml(expense.name)}
+            </strong>
+          </td>
+
+          <td>
+            <span class="badge ${badgeClass}">
+              ${expense.type}
+            </span>
+          </td>
+
+          <td style="min-width:160px;">
+
+            <input
+              type="number"
+              value="${amount}"
+              min="0"
+              onchange="updateExpenseAmount(${expense.id},this.value)"
+            >
+
+          </td>
+
+          <td>
+
+            <button
+              class="btn-edit btn-small"
+              onclick="editExpense(${expense.id})"
+            >
+              ✏️ Edit
+            </button>
+
+            <button
+              class="btn-danger btn-small"
+              onclick="deleteExpense(${expense.id})"
+            >
+              🗑️ Delete
+            </button>
+
+          </td>
+
+        </tr>
+      `;
+
+    }).join("");
+
+}
+
+
+// -----------------------------
+// MONTHLY PLAN
+// -----------------------------
 
 function renderPlan(){
 
-  const month =
-    getMonth();
+  const tbody =
+    document.getElementById("monthlyPlan");
 
+  const month =
+    document.getElementById("month").value;
 
   const monthData =
-    data.months[month] || {
-
-      salary:0,
-
-      expenseAmounts:{}
-
-    };
-
+    getMonthData(month);
 
   const salary =
-    Number(
-      monthData.salary || 0
-    );
+    Number(monthData.salary) || 0;
 
-
-  document.getElementById(
-    "salary"
-  ).value =
-    salary || "";
-
-
-  document.getElementById(
-    "summarySalary"
-  ).textContent =
-    money(salary);
-
+  let rows = "";
 
   let totalExpenses = 0;
 
 
-  const rows =
-    data.expenses
-      .map(expense => {
+  data.expenses.forEach(expense => {
 
-        const amount =
-          getExpenseAmount(
-            expense,
-            month
-          );
+    const amount =
+      getExpenseAmount(
+        expense,
+        month
+      );
 
+    totalExpenses += amount;
 
-        totalExpenses +=
-          amount;
-
-
-        return `
-
-          <tr>
-
-            <td>
-              ${escapeHTML(
-                expense.name
-              )}
-            </td>
-
-            <td>
-
-              <span class="badge">
-                ${expense.type}
-              </span>
-
-            </td>
-
-            <td>
-
-              <input
-                type="number"
-                min="0"
-                value="${amount}"
-                onchange="
-                  updateExpenseAmount(
-                    ${expense.id},
-                    this.value
-                  )
-                "
-              >
-
-            </td>
-
-            <td>
-
-              <button
-                class="red"
-                style="
-                  width:auto;
-                  padding:8px 12px;
-                "
-                onclick="
-                  deleteExpense(
-                    ${expense.id}
-                  )
-                "
-              >
-                Delete
-              </button>
-
-            </td>
-
-          </tr>
-
-        `;
-
-      })
-      .join("");
-
-
-  document.getElementById(
-    "planTable"
-  ).innerHTML =
-    rows ||
-
-    `
+    rows += `
 
       <tr>
 
-        <td colspan="4">
+        <td>
+          ${escapeHtml(expense.name)}
+        </td>
 
-          <div class="empty">
-            Add your expenses above.
-          </div>
-
+        <td>
+          ${money(amount)}
         </td>
 
       </tr>
 
     `;
 
+  });
 
-  /*
-    MAIN SAVING CALCULATION
 
-    SALARY - TOTAL EXPENSE
-    = HOW MUCH CAN SAVE
-  */
+  let loanPayment = 0;
+
+  if(data.loan){
+
+    loanPayment =
+      Number(
+        data.loan.monthlyPayment
+      ) || 0;
+
+    totalExpenses += loanPayment;
+
+    rows += `
+
+      <tr>
+
+        <td>
+          🏦 ${escapeHtml(data.loan.name)}
+          <span class="badge"
+                style="background:#ede9fe;color:#6d28d9;">
+            Loan
+          </span>
+        </td>
+
+        <td>
+          ${money(loanPayment)}
+        </td>
+
+      </tr>
+
+    `;
+
+  }
+
+
+  if(rows === ""){
+
+    rows = `
+      <tr>
+        <td colspan="2" class="empty">
+          No expenses added.
+        </td>
+      </tr>
+    `;
+
+  }
+
 
   const canSave =
     salary - totalExpenses;
 
 
-  document.getElementById(
-    "summaryExpenses"
-  ).textContent =
-    money(totalExpenses);
+  rows += `
 
+    <tr style="font-weight:bold;background:#ecfdf5;">
 
-  document.getElementById(
-    "summarySaving"
-  ).textContent =
-    money(
-      canSave > 0
-        ? canSave
-        : 0
-    );
+      <td>
+        💚 Can Save
+      </td>
 
-
-  document.getElementById(
-    "summaryRemaining"
-  ).textContent =
-    money(canSave);
-
-
-  document.getElementById(
-    "bigSaving"
-  ).textContent =
-    money(
-      canSave > 0
-        ? canSave
-        : 0
-    );
-
-
-  const savingText =
-    document.getElementById(
-      "savingText"
-    );
-
-
-  if(salary === 0){
-
-    savingText.innerHTML =
-      "💡 First enter your monthly salary.";
-
-  }
-
-  else if(canSave > 0){
-
-    savingText.innerHTML = `
-
-      After all your planned expenses,
-
-      <strong>
+      <td style="color:#16a34a;">
         ${money(canSave)}
-      </strong>
+      </td>
 
-      can be saved this month. 💰
+    </tr>
 
-    `;
+  `;
 
-  }
 
-  else if(canSave === 0){
+  tbody.innerHTML = rows;
 
-    savingText.innerHTML = `
 
-      Your entire salary is allocated
-      to expenses.
+  document.getElementById("summarySalary")
+    .textContent = money(salary);
 
-    `;
+  document.getElementById("summaryExpenses")
+    .textContent = money(totalExpenses);
 
-  }
+  document.getElementById("summarySave")
+    .textContent = money(canSave);
 
-  else{
+  document.getElementById("summaryRemaining")
+    .textContent = money(canSave);
 
-    savingText.innerHTML = `
-
-      <strong>
-        ⚠️ Your expenses are
-        ${money(
-          Math.abs(canSave)
-        )}
-        higher than your salary.
-      </strong>
-
-    `;
-
-  }
+  document.getElementById("bigSaving")
+    .textContent = money(canSave);
 
 }
 
 
-/* HISTORY */
+// -----------------------------
+// HISTORY
+// -----------------------------
 
 function renderHistory(){
 
-  const container =
-    document.getElementById(
-      "history"
-    );
-
+  const tbody =
+    document.getElementById("historyList");
 
   const months =
-    Object.keys(
-      data.months
-    )
-    .sort()
-    .reverse();
+    Object.keys(data.months).sort().reverse();
 
 
-  if(!months.length){
+  if(months.length === 0){
 
-    container.innerHTML = `
-
-      <div class="empty">
-        No monthly history yet.
-      </div>
-
+    tbody.innerHTML = `
+      <tr>
+        <td colspan="5" class="empty">
+          No monthly history yet.
+        </td>
+      </tr>
     `;
 
     return;
@@ -1204,130 +1502,110 @@ function renderHistory(){
   }
 
 
-  container.innerHTML =
-    months
-      .map(month => {
+  tbody.innerHTML =
+    months.map(month => {
 
-        const monthData =
-          data.months[
+      const monthData =
+        data.months[month];
+
+      const salary =
+        Number(monthData.salary) || 0;
+
+      let expenses = 0;
+
+
+      data.expenses.forEach(expense => {
+
+        expenses +=
+          getExpenseAmount(
+            expense,
             month
-          ];
-
-
-        const salary =
-          Number(
-            monthData.salary || 0
           );
 
-
-        let total = 0;
-
-
-        data.expenses
-          .forEach(expense => {
-
-            total +=
-              getExpenseAmount(
-                expense,
-                month
-              );
-
-          });
+      });
 
 
-        const saving =
-          salary - total;
+      let loanPayment = 0;
+
+      if(data.loan){
+
+        loanPayment =
+          Number(
+            data.loan.monthlyPayment
+          ) || 0;
+
+        expenses += loanPayment;
+
+      }
 
 
-        return `
+      const canSave =
+        salary - expenses;
 
-          <div class="history-item">
 
+      return `
+
+        <tr>
+
+          <td>
             <strong>
-              📅 ${month}
+              ${formatMonth(month)}
             </strong>
+          </td>
 
-            Salary:
+          <td>
             ${money(salary)}
+          </td>
 
-            &nbsp; | &nbsp;
+          <td>
+            ${money(expenses)}
+          </td>
 
-            Expenses:
-            ${money(total)}
+          <td>
+            ${money(loanPayment)}
+          </td>
 
-            &nbsp; | &nbsp;
+          <td style="
+            color:${canSave >= 0 ? '#16a34a' : '#dc2626'};
+            font-weight:bold;
+          ">
+            ${money(canSave)}
+          </td>
 
-            Can Save:
+        </tr>
 
-            <strong>
-              ${money(
-                saving > 0
-                  ? saving
-                  : 0
-              )}
-            </strong>
+      `;
 
-          </div>
-
-        `;
-
-      })
-      .join("");
+    }).join("");
 
 }
 
 
-/* ESCAPE */
+// -----------------------------
+// ESCAPE HTML
+// -----------------------------
 
-function escapeHTML(text){
+function escapeHtml(value){
 
-  return String(text)
-
-    .replace(
-      /&/g,
-      "&amp;"
-    )
-
-    .replace(
-      /</g,
-      "&lt;"
-    )
-
-    .replace(
-      />/g,
-      "&gt;"
-    )
-
-    .replace(
-      /"/g,
-      "&quot;"
-    )
-
-    .replace(
-      /'/g,
-      "&#039;"
-    );
+  return String(value)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
 
 }
 
 
-/* MONTH CHANGE */
-
-monthInput.addEventListener(
-  "change",
-  function(){
-
-    render();
-
-  }
-);
-
-
-/* RENDER */
+// -----------------------------
+// RENDER
+// -----------------------------
 
 function render(){
 
-  renderExpenseList();
+  renderLoan();
+
+  renderExpenses();
 
   renderPlan();
 
@@ -1335,6 +1613,10 @@ function render(){
 
 }
 
+
+// INITIAL LOAD
+
+loadSalary();
 
 render();
 
