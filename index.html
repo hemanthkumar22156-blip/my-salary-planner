@@ -3,15 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>My Salary Planner</title>
 
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
+*{box-sizing:border-box;margin:0;padding:0}
 
 body{
   font-family:Arial,Helvetica,sans-serif;
@@ -27,15 +22,8 @@ header{
   text-align:center;
 }
 
-header h1{
-  font-size:30px;
-  margin-bottom:8px;
-}
-
-header p{
-  font-size:14px;
-  opacity:.9;
-}
+header h1{font-size:30px;margin-bottom:8px}
+header p{font-size:14px;opacity:.9}
 
 .container{
   max-width:1150px;
@@ -74,8 +62,7 @@ input,select{
   background:white;
 }
 
-input:focus,
-select:focus{
+input:focus,select:focus{
   border-color:#2563eb;
   box-shadow:0 0 0 3px rgba(37,99,235,.1);
 }
@@ -106,18 +93,11 @@ button{
   color:white;
 }
 
-.btn-primary:hover{
-  background:#1d4ed8;
-}
+.btn-primary:hover{background:#1d4ed8}
 
 .btn-danger{
   background:#fee2e2;
   color:#dc2626;
-}
-
-.btn-edit{
-  background:#e0e7ff;
-  color:#3730a3;
 }
 
 .btn-small{
@@ -151,21 +131,10 @@ button{
   font-weight:bold;
 }
 
-.salary .value{
-  color:#2563eb;
-}
-
-.expenses .value{
-  color:#dc2626;
-}
-
-.save .value{
-  color:#16a34a;
-}
-
-.remaining .value{
-  color:#7c3aed;
-}
+.salary .value{color:#2563eb}
+.expenses .value{color:#dc2626}
+.save .value{color:#16a34a}
+.remaining .value{color:#7c3aed}
 
 .saving-card{
   background:linear-gradient(135deg,#065f46,#10b981);
@@ -187,14 +156,12 @@ button{
   font-weight:bold;
 }
 
-.table-wrap{
-  overflow-x:auto;
-}
+.table-wrap{overflow-x:auto}
 
 table{
   width:100%;
   border-collapse:collapse;
-  min-width:750px;
+  min-width:700px;
 }
 
 th{
@@ -211,9 +178,7 @@ td{
   font-size:14px;
 }
 
-tr:hover td{
-  background:#f9fafb;
-}
+tr:hover td{background:#f9fafb}
 
 .badge{
   display:inline-block;
@@ -243,6 +208,11 @@ tr:hover td{
   color:#15803d;
 }
 
+.savings{
+  background:#dcfce7;
+  color:#15803d;
+}
+
 .loan-box{
   background:linear-gradient(135deg,#1e1b4b,#4c1d95);
   color:white;
@@ -251,9 +221,7 @@ tr:hover td{
   margin-bottom:20px;
 }
 
-.loan-box h2{
-  color:white;
-}
+.loan-box h2{color:white}
 
 .loan-info{
   display:grid;
@@ -295,9 +263,7 @@ tr:hover td{
   border-bottom:1px solid #e5e7eb;
 }
 
-.loan-result-row:last-child{
-  border-bottom:none;
-}
+.loan-result-row:last-child{border-bottom:none}
 
 .interest{
   color:#dc2626;
@@ -329,7 +295,6 @@ tr:hover td{
   border:1px solid #bbf7d0;
   border-radius:14px;
   padding:15px;
-  margin-top:15px;
 }
 
 .empty{
@@ -345,43 +310,17 @@ tr:hover td{
 }
 
 @media(max-width:850px){
-
-  .summary{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .loan-info{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .form-grid-3{
-    grid-template-columns:1fr;
-  }
-
+  .summary{grid-template-columns:repeat(2,1fr)}
+  .loan-info{grid-template-columns:repeat(2,1fr)}
+  .form-grid-3{grid-template-columns:1fr}
 }
 
 @media(max-width:600px){
-
-  header h1{
-    font-size:24px;
-  }
-
-  .form-grid{
-    grid-template-columns:1fr;
-  }
-
-  .summary{
-    grid-template-columns:1fr;
-  }
-
-  .loan-info{
-    grid-template-columns:1fr;
-  }
-
-  .saving-amount{
-    font-size:32px;
-  }
-
+  header h1{font-size:24px}
+  .form-grid{grid-template-columns:1fr}
+  .summary{grid-template-columns:1fr}
+  .loan-info{grid-template-columns:1fr}
+  .saving-amount{font-size:32px}
 }
 </style>
 </head>
@@ -395,7 +334,7 @@ tr:hover td{
 
 <div class="container">
 
-<!-- ================= SALARY ================= -->
+<!-- SALARY -->
 
 <div class="card">
 
@@ -429,24 +368,21 @@ tr:hover td{
 </div>
 
 
-<!-- ================= LOAN ================= -->
+<!-- LOAN -->
 
 <div class="loan-box">
 
   <h2>🏦 Loan / Debt Planner</h2>
 
   <div class="section-note">
-
-    Enter your loan amount, annual interest rate and monthly payment.
-    The planner will calculate total interest, total payment,
-    number of months and expected completion month.
-
+    Enter loan amount, annual interest and monthly payment.
+    Loan interest, total payment, months and completion date will be calculated automatically.
   </div>
 
   <div class="form-grid-3">
 
     <div>
-      <label style="color:white;">Loan Name</label>
+      <label style="color:white">Loan Name</label>
       <input
         type="text"
         id="loanName"
@@ -455,7 +391,7 @@ tr:hover td{
     </div>
 
     <div>
-      <label style="color:white;">Loan Amount (₹)</label>
+      <label style="color:white">Loan Amount (₹)</label>
       <input
         type="number"
         id="loanAmount"
@@ -465,7 +401,7 @@ tr:hover td{
     </div>
 
     <div>
-      <label style="color:white;">Annual Interest (%)</label>
+      <label style="color:white">Annual Interest (%)</label>
       <input
         type="number"
         id="interestRate"
@@ -476,7 +412,7 @@ tr:hover td{
     </div>
 
     <div>
-      <label style="color:white;">Monthly Payment (₹)</label>
+      <label style="color:white">Monthly Payment (₹)</label>
       <input
         type="number"
         id="monthlyPayment"
@@ -486,11 +422,8 @@ tr:hover td{
     </div>
 
     <div>
-      <label style="color:white;">Loan Start Month</label>
-      <input
-        type="month"
-        id="loanStartMonth"
-      >
+      <label style="color:white">Loan Start Month</label>
+      <input type="month" id="loanStartMonth">
     </div>
 
   </div>
@@ -506,65 +439,34 @@ tr:hover td{
 </div>
 
 
-<!-- ================= SUMMARY ================= -->
+<!-- SUMMARY -->
 
 <div class="summary">
 
   <div class="summary-box salary">
-
-    <div class="title">
-      💰 Salary
-    </div>
-
-    <div class="value" id="summarySalary">
-      ₹0
-    </div>
-
+    <div class="title">💰 Salary</div>
+    <div class="value" id="summarySalary">₹0</div>
   </div>
-
 
   <div class="summary-box expenses">
-
-    <div class="title">
-      💸 Total Expenses
-    </div>
-
-    <div class="value" id="summaryExpenses">
-      ₹0
-    </div>
-
+    <div class="title">💸 Total Expenses</div>
+    <div class="value" id="summaryExpenses">₹0</div>
   </div>
-
 
   <div class="summary-box save">
-
-    <div class="title">
-      💚 Can Save
-    </div>
-
-    <div class="value" id="summarySave">
-      ₹0
-    </div>
-
+    <div class="title">💚 Can Save</div>
+    <div class="value" id="summarySave">₹0</div>
   </div>
 
-
   <div class="summary-box remaining">
-
-    <div class="title">
-      📊 Remaining
-    </div>
-
-    <div class="value" id="summaryRemaining">
-      ₹0
-    </div>
-
+    <div class="title">📊 Remaining</div>
+    <div class="value" id="summaryRemaining">₹0</div>
   </div>
 
 </div>
 
 
-<!-- ================= SAVINGS ================= -->
+<!-- SAVING -->
 
 <div class="saving-card">
 
@@ -574,22 +476,22 @@ tr:hover td{
     ₹0
   </div>
 
-  <p style="margin-top:8px;">
-    Estimated savings after planned expenses & loan payment
+  <p style="margin-top:8px">
+    Estimated amount remaining after all planned expenses
   </p>
 
 </div>
 
 
-<!-- ================= EXPENSES ================= -->
+<!-- AUTOMATIC EXPENSES -->
 
 <div class="card">
 
   <h2>🧾 Monthly Expenses</h2>
 
   <div class="section-note">
-    These are your basic expense categories.
-    You can change the amount every month.
+    These expenses are automatically available.
+    Enter or change only the amount.
   </div>
 
   <div class="table-wrap">
@@ -597,14 +499,12 @@ tr:hover td{
     <table>
 
       <thead>
-
         <tr>
           <th>#</th>
           <th>Expense</th>
           <th>Type</th>
           <th>Amount (₹)</th>
         </tr>
-
       </thead>
 
       <tbody id="expenseList"></tbody>
@@ -616,15 +516,15 @@ tr:hover td{
 </div>
 
 
-<!-- ================= MANUAL EXPENSE ================= -->
+<!-- MANUAL -->
 
 <div class="card">
 
   <h2>➕ Manual / Other Expense</h2>
 
   <div class="section-note">
-    If an expense is not available in the above list,
-    add it manually here.
+    If you have an expense that is not in the automatic list,
+    add it here.
   </div>
 
   <div class="manual-box">
@@ -632,29 +532,22 @@ tr:hover td{
     <div class="form-grid">
 
       <div>
-
         <label>Expense Name</label>
-
         <input
           type="text"
           id="manualExpenseName"
           placeholder="Example: Insurance"
         >
-
       </div>
 
-
       <div>
-
         <label>Amount (₹)</label>
-
         <input
           type="number"
           id="manualExpenseAmount"
           placeholder="Example: 2000"
           min="0"
         >
-
       </div>
 
     </div>
@@ -673,7 +566,7 @@ tr:hover td{
 </div>
 
 
-<!-- ================= MONTHLY PLAN ================= -->
+<!-- MONTHLY PLAN -->
 
 <div class="card">
 
@@ -684,12 +577,10 @@ tr:hover td{
     <table>
 
       <thead>
-
         <tr>
           <th>Item</th>
           <th>Amount</th>
         </tr>
-
       </thead>
 
       <tbody id="monthlyPlan"></tbody>
@@ -701,7 +592,7 @@ tr:hover td{
 </div>
 
 
-<!-- ================= HISTORY ================= -->
+<!-- HISTORY -->
 
 <div class="card">
 
@@ -712,7 +603,6 @@ tr:hover td{
     <table>
 
       <thead>
-
         <tr>
           <th>Month</th>
           <th>Salary</th>
@@ -720,7 +610,6 @@ tr:hover td{
           <th>Loan</th>
           <th>Can Save</th>
         </tr>
-
       </thead>
 
       <tbody id="historyList"></tbody>
@@ -736,12 +625,17 @@ tr:hover td{
 
 <script>
 
-/* ==========================================
+/* =========================================
    STORAGE
-========================================== */
+========================================= */
 
-const STORAGE_KEY = "mySalaryPlannerData";
+const STORAGE_KEY =
+  "mySalaryPlannerData";
 
+
+/* =========================================
+   AUTOMATIC EXPENSE LIST
+========================================= */
 
 const DEFAULT_EXPENSES = [
 
@@ -838,11 +732,6 @@ const DEFAULT_EXPENSES = [
   {
     name:"Parking",
     type:"Variable"
-  },
-
-  {
-    name:"Other",
-    type:"Manual"
   }
 
 ];
@@ -862,35 +751,56 @@ let data =
   };
 
 
-/* ==========================================
-   INITIAL DEFAULT EXPENSES
-========================================== */
+/* =========================================
+   CREATE AUTOMATIC EXPENSES
+========================================= */
 
 function initializeExpenses(){
 
-  if(data.expenses.length === 0){
+  /*
+    Old version data irundhaalum,
+    missing default expenses automatic-ah add pannum.
+  */
 
-    DEFAULT_EXPENSES.forEach((expense,index)=>{
+  DEFAULT_EXPENSES.forEach(
+    (defaultExpense,index)=>{
 
-      data.expenses.push({
+      const exists =
+        data.expenses.some(
+          expense =>
+            expense.name ===
+            defaultExpense.name &&
+            expense.isDefault === true
+        );
 
-        id:"default_" + index,
 
-        name:expense.name,
+      if(!exists){
 
-        type:expense.type,
+        data.expenses.push({
 
-        defaultAmount:0,
+          id:
+            "default_" +
+            index,
 
-        isDefault:true
+          name:
+            defaultExpense.name,
 
-      });
+          type:
+            defaultExpense.type,
 
-    });
+          defaultAmount:0,
 
-    saveData();
+          isDefault:true
 
-  }
+        });
+
+      }
+
+    }
+  );
+
+
+  saveData();
 
 }
 
@@ -898,9 +808,9 @@ function initializeExpenses(){
 initializeExpenses();
 
 
-/* ==========================================
-   HELPERS
-========================================== */
+/* =========================================
+   SAVE
+========================================= */
 
 function saveData(){
 
@@ -912,18 +822,27 @@ function saveData(){
 }
 
 
+/* =========================================
+   MONEY
+========================================= */
+
 function money(value){
 
   return "₹" +
-    Number(value || 0).toLocaleString(
-      "en-IN",
-      {
-        maximumFractionDigits:2
-      }
-    );
+    Number(value || 0)
+      .toLocaleString(
+        "en-IN",
+        {
+          maximumFractionDigits:2
+        }
+      );
 
 }
 
+
+/* =========================================
+   MONTH
+========================================= */
 
 function currentMonth(){
 
@@ -931,9 +850,18 @@ function currentMonth(){
 
   return d.getFullYear() +
     "-" +
-    String(d.getMonth()+1).padStart(2,"0");
+    String(
+      d.getMonth()+1
+    ).padStart(2,"0");
 
 }
+
+
+document.getElementById("month").value =
+  currentMonth();
+
+document.getElementById("loanStartMonth").value =
+  currentMonth();
 
 
 function getMonthData(month){
@@ -955,66 +883,9 @@ function getMonthData(month){
 }
 
 
-function formatMonth(month){
-
-  if(!month){
-
-    return "-";
-
-  }
-
-  const parts =
-    month.split("-").map(Number);
-
-  const date =
-    new Date(
-      parts[0],
-      parts[1]-1,
-      1
-    );
-
-  return date.toLocaleDateString(
-    "en-IN",
-    {
-      month:"long",
-      year:"numeric"
-    }
-  );
-
-}
-
-
-function escapeHtml(value){
-
-  return String(value)
-
-    .replace(/&/g,"&amp;")
-
-    .replace(/</g,"&lt;")
-
-    .replace(/>/g,"&gt;")
-
-    .replace(/"/g,"&quot;")
-
-    .replace(/'/g,"&#039;");
-
-}
-
-
-/* ==========================================
-   MONTH
-========================================== */
-
-document.getElementById("month").value =
-  currentMonth();
-
-document.getElementById("loanStartMonth").value =
-  currentMonth();
-
-
-/* ==========================================
+/* =========================================
    SALARY
-========================================== */
+========================================= */
 
 function saveSalary(){
 
@@ -1044,7 +915,9 @@ function saveSalary(){
 
   render();
 
-  alert("Salary saved successfully 👍");
+  alert(
+    "Salary saved successfully 👍"
+  );
 
 }
 
@@ -1056,6 +929,7 @@ function loadSalary(){
 
   const monthData =
     getMonthData(month);
+
 
   document.getElementById("salary").value =
     monthData.salary || "";
@@ -1077,9 +951,9 @@ document
   );
 
 
-/* ==========================================
+/* =========================================
    EXPENSE AMOUNT
-========================================== */
+========================================= */
 
 function getExpenseAmount(
   expense,
@@ -1113,17 +987,16 @@ function getExpenseAmount(
 }
 
 
-/* ==========================================
-   UPDATE EXPENSE
-========================================== */
-
 function updateExpenseAmount(
   id,
   value
 ){
 
   const month =
-    document.getElementById("month").value;
+    document.getElementById(
+      "month"
+    ).value;
+
 
   getMonthData(month)
     .expenseAmounts[id] =
@@ -1137,15 +1010,17 @@ function updateExpenseAmount(
 }
 
 
-/* ==========================================
+/* =========================================
    MANUAL EXPENSE
-========================================== */
+========================================= */
 
 function addManualExpense(){
 
   const name =
     document
-      .getElementById("manualExpenseName")
+      .getElementById(
+        "manualExpenseName"
+      )
       .value
       .trim();
 
@@ -1153,23 +1028,18 @@ function addManualExpense(){
   const amount =
     Number(
       document
-        .getElementById("manualExpenseAmount")
+        .getElementById(
+          "manualExpenseAmount"
+        )
         .value
     ) || 0;
 
 
   if(!name){
 
-    alert("Please enter expense name.");
-
-    return;
-
-  }
-
-
-  if(amount < 0){
-
-    alert("Amount cannot be negative.");
+    alert(
+      "Please enter expense name."
+    );
 
     return;
 
@@ -1197,7 +1067,9 @@ function addManualExpense(){
 
 
   const month =
-    document.getElementById("month").value;
+    document.getElementById(
+      "month"
+    ).value;
 
 
   getMonthData(month)
@@ -1208,14 +1080,14 @@ function addManualExpense(){
   saveData();
 
 
-  document
-    .getElementById("manualExpenseName")
-    .value="";
+  document.getElementById(
+    "manualExpenseName"
+  ).value="";
 
 
-  document
-    .getElementById("manualExpenseAmount")
-    .value="";
+  document.getElementById(
+    "manualExpenseAmount"
+  ).value="";
 
 
   render();
@@ -1223,43 +1095,54 @@ function addManualExpense(){
 }
 
 
-/* ==========================================
+/* =========================================
+   ESCAPE HTML
+========================================= */
+
+function escapeHtml(value){
+
+  return String(value)
+
+    .replace(/&/g,"&amp;")
+
+    .replace(/</g,"&lt;")
+
+    .replace(/>/g,"&gt;")
+
+    .replace(/"/g,"&quot;")
+
+    .replace(/'/g,"&#039;");
+
+}
+
+
+/* =========================================
    EXPENSE LIST
-========================================== */
+========================================= */
 
 function renderExpenses(){
 
   const tbody =
-    document.getElementById("expenseList");
+    document.getElementById(
+      "expenseList"
+    );
+
 
   const month =
-    document.getElementById("month").value;
+    document.getElementById(
+      "month"
+    ).value;
 
 
-  if(data.expenses.length === 0){
-
-    tbody.innerHTML = `
-
-      <tr>
-
-        <td
-          colspan="4"
-          class="empty"
-        >
-          No expenses found.
-        </td>
-
-      </tr>
-
-    `;
-
-    return;
-
-  }
+  const automaticExpenses =
+    data.expenses.filter(
+      expense =>
+        expense.isDefault === true
+    );
 
 
   tbody.innerHTML =
-    data.expenses.map(
+    automaticExpenses.map(
       (expense,index)=>{
 
         const amount =
@@ -1275,9 +1158,13 @@ function renderExpenses(){
             .replace(" ","-");
 
 
-        if(expense.type === "Savings"){
+        if(
+          expense.type ===
+          "Savings"
+        ){
 
-          badgeClass = "manual";
+          badgeClass =
+            "savings";
 
         }
 
@@ -1292,29 +1179,24 @@ function renderExpenses(){
               </strong>
             </td>
 
-
             <td>
               ${escapeHtml(
                 expense.name
               )}
             </td>
 
-
             <td>
 
               <span
                 class="badge ${badgeClass}"
               >
-                ${escapeHtml(
-                  expense.type
-                )}
+                ${expense.type}
               </span>
 
             </td>
 
-
             <td
-              style="min-width:180px;"
+              style="min-width:180px"
             >
 
               <input
@@ -1341,9 +1223,9 @@ function renderExpenses(){
 }
 
 
-/* ==========================================
+/* =========================================
    LOAN CALCULATION
-========================================== */
+========================================= */
 
 function calculateLoan(){
 
@@ -1355,11 +1237,15 @@ function calculateLoan(){
 
 
   const principal =
-    Number(data.loan.amount) || 0;
+    Number(
+      data.loan.amount
+    ) || 0;
 
 
   const annualRate =
-    Number(data.loan.interest) || 0;
+    Number(
+      data.loan.interest
+    ) || 0;
 
 
   const payment =
@@ -1385,7 +1271,6 @@ function calculateLoan(){
   let balance =
     principal;
 
-
   let totalInterest = 0;
 
   let months = 0;
@@ -1407,13 +1292,15 @@ function calculateLoan(){
     if(monthlyRate > 0){
 
       interest =
-        balance * monthlyRate;
+        balance *
+        monthlyRate;
 
     }
 
 
     const amountDue =
-      balance + interest;
+      balance +
+      interest;
 
 
     let paymentThisMonth =
@@ -1451,9 +1338,7 @@ function calculateLoan(){
   if(months >= maxMonths){
 
     return {
-
       impossible:true
-
     };
 
   }
@@ -1467,7 +1352,8 @@ function calculateLoan(){
 
     monthlyPayment:payment,
 
-    totalInterest:totalInterest,
+    totalInterest:
+      totalInterest,
 
     totalPayable:
       principal +
@@ -1476,25 +1362,24 @@ function calculateLoan(){
     months:months,
 
     finalPayment:
-      finalPayment,
-
-    remaining:
-      Math.max(balance,0)
+      finalPayment
 
   };
 
 }
 
 
-/* ==========================================
+/* =========================================
    SAVE LOAN
-========================================== */
+========================================= */
 
 function saveLoan(){
 
   const name =
     document
-      .getElementById("loanName")
+      .getElementById(
+        "loanName"
+      )
       .value
       .trim();
 
@@ -1502,7 +1387,9 @@ function saveLoan(){
   const amount =
     Number(
       document
-        .getElementById("loanAmount")
+        .getElementById(
+          "loanAmount"
+        )
         .value
     ) || 0;
 
@@ -1510,7 +1397,9 @@ function saveLoan(){
   const interest =
     Number(
       document
-        .getElementById("interestRate")
+        .getElementById(
+          "interestRate"
+        )
         .value
     ) || 0;
 
@@ -1518,20 +1407,26 @@ function saveLoan(){
   const monthlyPayment =
     Number(
       document
-        .getElementById("monthlyPayment")
+        .getElementById(
+          "monthlyPayment"
+        )
         .value
     ) || 0;
 
 
   const startMonth =
     document
-      .getElementById("loanStartMonth")
+      .getElementById(
+        "loanStartMonth"
+      )
       .value;
 
 
   if(amount <= 0){
 
-    alert("Please enter loan amount.");
+    alert(
+      "Please enter loan amount."
+    );
 
     return;
 
@@ -1540,7 +1435,9 @@ function saveLoan(){
 
   if(monthlyPayment <= 0){
 
-    alert("Please enter monthly payment.");
+    alert(
+      "Please enter monthly payment."
+    );
 
     return;
 
@@ -1550,7 +1447,8 @@ function saveLoan(){
   data.loan = {
 
     name:
-      name || "My Loan",
+      name ||
+      "My Loan",
 
     amount:amount,
 
@@ -1571,15 +1469,15 @@ function saveLoan(){
   render();
 
   alert(
-    "Loan saved & calculated successfully 👍"
+    "Loan saved successfully 👍"
   );
 
 }
 
 
-/* ==========================================
-   ADD MONTHS
-========================================== */
+/* =========================================
+   ADD MONTH
+========================================= */
 
 function addMonthsToMonth(
   month,
@@ -1615,9 +1513,39 @@ function addMonthsToMonth(
 }
 
 
-/* ==========================================
-   LOAN RENDER
-========================================== */
+function formatMonth(month){
+
+  if(!month) return "-";
+
+
+  const parts =
+    month
+      .split("-")
+      .map(Number);
+
+
+  const date =
+    new Date(
+      parts[0],
+      parts[1]-1,
+      1
+    );
+
+
+  return date.toLocaleDateString(
+    "en-IN",
+    {
+      month:"long",
+      year:"numeric"
+    }
+  );
+
+}
+
+
+/* =========================================
+   LOAN DISPLAY
+========================================= */
 
 function renderLoan(){
 
@@ -1629,7 +1557,7 @@ function renderLoan(){
 
   if(!data.loan){
 
-    output.innerHTML = "";
+    output.innerHTML="";
 
     return;
 
@@ -1645,9 +1573,7 @@ function renderLoan(){
     output.innerHTML = `
 
       <div class="loan-result">
-
         Please enter valid loan details.
-
       </div>
 
     `;
@@ -1662,10 +1588,7 @@ function renderLoan(){
     output.innerHTML = `
 
       <div class="loan-result">
-
-        Monthly payment is too low
-        to finish this loan.
-
+        Monthly payment is too low to finish this loan.
       </div>
 
     `;
@@ -1704,7 +1627,7 @@ function renderLoan(){
       <div class="loan-stat">
 
         <div class="label">
-          Interest Rate
+          Interest
         </div>
 
         <div class="number">
@@ -1749,7 +1672,7 @@ function renderLoan(){
       <div class="loan-result-row">
 
         <span>
-          Total Interest
+          🔴 Total Interest
         </span>
 
         <span class="interest">
@@ -1764,7 +1687,7 @@ function renderLoan(){
       <div class="loan-result-row">
 
         <span>
-          Total Amount to Pay
+          🟣 Total Amount to Pay
         </span>
 
         <span class="total-pay">
@@ -1779,7 +1702,7 @@ function renderLoan(){
       <div class="loan-result-row">
 
         <span>
-          Monthly Payment
+          💵 Monthly Payment
         </span>
 
         <span>
@@ -1794,7 +1717,7 @@ function renderLoan(){
       <div class="loan-result-row">
 
         <span>
-          Final Payment
+          🟢 Final Payment
         </span>
 
         <span class="complete">
@@ -1809,7 +1732,7 @@ function renderLoan(){
       <div class="loan-result-row">
 
         <span>
-          Expected Completion
+          📅 Expected Completion
         </span>
 
         <span class="complete">
@@ -1824,7 +1747,7 @@ function renderLoan(){
       <div class="loan-result-row">
 
         <span>
-          Loan Name
+          🏦 Loan Name
         </span>
 
         <span>
@@ -1850,9 +1773,9 @@ function renderLoan(){
 }
 
 
-/* ==========================================
+/* =========================================
    DELETE LOAN
-========================================== */
+========================================= */
 
 function deleteLoan(){
 
@@ -1876,9 +1799,9 @@ function deleteLoan(){
 }
 
 
-/* ==========================================
+/* =========================================
    MONTHLY PLAN
-========================================== */
+========================================= */
 
 function renderPlan(){
 
@@ -1965,20 +1888,16 @@ function renderPlan(){
       <tr>
 
         <td>
-
           🏦
           ${escapeHtml(
             data.loan.name
           )}
-
         </td>
 
         <td>
-
           ${money(
             loanPayment
           )}
-
         </td>
 
       </tr>
@@ -2006,9 +1925,7 @@ function renderPlan(){
         💚 Can Save
       </td>
 
-      <td
-        style="color:#16a34a;"
-      >
+      <td style="color:#16a34a">
         ${money(canSave)}
       </td>
 
@@ -2021,51 +1938,41 @@ function renderPlan(){
     rows;
 
 
-  document
-    .getElementById(
-      "summarySalary"
-    )
-    .textContent =
-      money(salary);
+  document.getElementById(
+    "summarySalary"
+  ).textContent =
+    money(salary);
 
 
-  document
-    .getElementById(
-      "summaryExpenses"
-    )
-    .textContent =
-      money(totalExpenses);
+  document.getElementById(
+    "summaryExpenses"
+  ).textContent =
+    money(totalExpenses);
 
 
-  document
-    .getElementById(
-      "summarySave"
-    )
-    .textContent =
-      money(canSave);
+  document.getElementById(
+    "summarySave"
+  ).textContent =
+    money(canSave);
 
 
-  document
-    .getElementById(
-      "summaryRemaining"
-    )
-    .textContent =
-      money(canSave);
+  document.getElementById(
+    "summaryRemaining"
+  ).textContent =
+    money(canSave);
 
 
-  document
-    .getElementById(
-      "bigSaving"
-    )
-    .textContent =
-      money(canSave);
+  document.getElementById(
+    "bigSaving"
+  ).textContent =
+    money(canSave);
 
 }
 
 
-/* ==========================================
+/* =========================================
    HISTORY
-========================================== */
+========================================= */
 
 function renderHistory(){
 
@@ -2167,21 +2074,17 @@ function renderHistory(){
               </strong>
             </td>
 
-
             <td>
               ${money(salary)}
             </td>
-
 
             <td>
               ${money(expenses)}
             </td>
 
-
             <td>
               ${money(loanPayment)}
             </td>
-
 
             <td
               style="
@@ -2206,9 +2109,9 @@ function renderHistory(){
 }
 
 
-/* ==========================================
+/* =========================================
    RENDER
-========================================== */
+========================================= */
 
 function render(){
 
